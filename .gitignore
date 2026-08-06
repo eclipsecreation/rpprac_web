@@ -1,0 +1,30 @@
+# Configuration spécifique à l'environnement local
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+/web/sites/*/settings.php
+
+# Fichiers utilisateurs et privés (VÉRIFIEZ LA GESTION PAR OVH !)
+/web/sites/*/files/
+/web/sites/*/private/
+
+# Drupal Caches & Logs
+/web/sites/*/files/php/
+# Ajoutez d'autres chemins de logs si nécessaire
+
+# Fichiers IDE et OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Node.js (si applicable)
+/node_modules/
+
+# PHPUnit (si applicable)
+/web/sites/default/files/phpunit/
+
+# Environnements de développement locaux
+.vagrant/
+.ddev/
+.lando.yml
+.lando.*.yml
