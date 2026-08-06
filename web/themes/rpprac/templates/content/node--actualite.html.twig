@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Theme override for full editorial nodes with hero support.
+ */
+#}
+{% if view_mode != 'full' %}
+  <article{{ attributes }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {{ content }}
+  </article>
+{% else %}
+  {% set hero_title = agecomevent_page_hero_title|default(label) %}
+  <article{{ attributes.addClass('node', 'node--type-actualite', 'agecomevent-editorial-page') }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {% if agecomevent_page_has_hero %}
+      <section class="agecomevent-editorial-page__hero">
+        <div class="agecomevent-hero-block agecomevent-hero-block--page"{% if agecomevent_hero_background_style %} style="{{ agecomevent_hero_background_style }}"{% endif %}>
+          {% if agecomevent_hero_has_video and agecomevent_hero_background_video_url %}
+            <div class="agecomevent-hero-block__media" aria-hidden="true">
+              <video class="agecomevent-hero-block__video" autoplay muted loop playsinline preload="metadata"{% if agecomevent_hero_video_poster_url %} poster="{{ agecomevent_hero_video_poster_url }}"{% endif %}>
+                <source src="{{ agecomevent_hero_background_video_url }}">
+              </video>
+            </div>
+          {% endif %}
+
+          <div class="agecomevent-hero-block__inner">
+            <div class="agecomevent-hero-block__content">
+              {% if hero_title %}
+                <h1 class="agecomevent-hero-block__title">{{ hero_title }}</h1>
+              {% endif %}
+
+              {% if content.field_hero_text %}
+                <div class="agecomevent-hero-block__text">{{ content.field_hero_text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    <div class="agecomevent-editorial-page__content">
+      {% if content.field_chapo or content.body %}
+        <div class="agecomevent-editorial-page__intro">
+          {% if content.field_chapo %}
+            <div class="agecomevent-editorial-page__chapo">{{ content.field_chapo }}</div>
+          {% endif %}
+          {% if content.body %}
+            <div class="agecomevent-editorial-page__body-copy">{{ content.body }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if content.field_page_sections %}
+        <div class="agecomevent-editorial-page__sections">{{ content.field_page_sections }}</div>
+      {% endif %}
+
+      {{ content|without('field_hero_title', 'field_hero_text', 'field_hero_image', 'field_hero_background_mode', 'field_hero_background_video', 'field_chapo', 'body', 'field_page_sections', 'links') }}
+      {{ content.links }}
+    </div>
+  </article>
+{% endif %}

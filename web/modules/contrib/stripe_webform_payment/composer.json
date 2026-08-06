@@ -1,0 +1,33 @@
+{
+    "name": "drupal/stripe_webform_payment",
+    "type": "drupal-module",
+    "description": "An implementation of Stripe module to integrate Webform with Stripe Payment Elements, Stripe products and Stripe customers.",
+    "keywords": [
+        "Drupal",
+        "webform",
+        "stripe",
+        "payment"
+    ],
+    "require": {
+        "drupal/stripe": "^2.0",
+        "drupal/webform": "^6.1"
+    },
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/stripe_webform_payment",
+    "authors": [
+        {
+            "name": "Hodba Khalaf",
+            "homepage": "https://www.drupal.org/u/hodba",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://www.drupal.org/node/NID/committers",
+            "role": "Contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/stripe_webform_payment",
+        "source": "http://cgit.drupalcode.org/stripe_webform_payment"
+    }
+}

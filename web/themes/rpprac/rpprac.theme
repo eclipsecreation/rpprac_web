@@ -1,0 +1,388 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for the RPPRAC theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_theme().
+ */
+function rpprac_theme(): array {
+  $common_variables = [
+    'content' => NULL,
+    'attributes' => NULL,
+    'agecomevent_has_section_image' => FALSE,
+    'agecomevent_hero_background_style' => NULL,
+    'agecomevent_hero_has_video' => FALSE,
+    'agecomevent_hero_background_video_url' => NULL,
+    'agecomevent_hero_video_poster_url' => NULL,
+  ];
+
+  return [
+    'agecomevent_home_hero' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-hero',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_positionnement' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-positionnement',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_cibles' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-cibles',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_differenciation' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-differenciation',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_methode' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-methode',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_ancrage_local' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-ancrage-local',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+    'agecomevent_home_contact_final' => [
+      'variables' => $common_variables,
+      'template' => 'block--block-content--type--accueil-contact-final',
+      'path' => \Drupal::service('extension.list.theme')->getPath('rpprac') . '/templates/block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function rpprac_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  unset($form['theme_mode_details']);
+  unset($form['body_details']);
+  unset($form['nav_details']);
+  unset($form['footer_details']);
+}
+
+/**
+ * Applies hero-specific template variables for homepage hero content.
+ */
+function rpprac_apply_hero_block_content_variables(array &$variables, \Drupal\block_content\BlockContentInterface $block_content): void {
+  if ($block_content->bundle() !== 'accueil_hero') {
+    return;
+  }
+
+  $variables['agecomevent_hero_background_mode'] = 'image';
+  if (!$block_content->get('field_hero_background_mode')->isEmpty()) {
+    $variables['agecomevent_hero_background_mode'] = $block_content->get('field_hero_background_mode')->value;
+  }
+
+  if (!$block_content->get('field_section_image')->isEmpty()) {
+    $image = $block_content->get('field_section_image')->entity;
+    if ($image) {
+      $image_url = \Drupal::service('file_url_generator')->generateString($image->getFileUri());
+      $variables['agecomevent_hero_background_image_url'] = $image_url;
+      $variables['agecomevent_hero_background_style'] = '--agecomevent-hero-background: url("' . $image_url . '");';
+      $variables['agecomevent_hero_video_poster_url'] = $image_url;
+    }
+  }
+
+  if ($variables['agecomevent_hero_background_mode'] !== 'video') {
+    return;
+  }
+
+  if (!$block_content->get('field_hero_background_video')->isEmpty()) {
+    $video = $block_content->get('field_hero_background_video')->entity;
+    if ($video) {
+      $variables['agecomevent_hero_background_video_url'] = \Drupal::service('file_url_generator')->generateString($video->getFileUri());
+      $variables['agecomevent_hero_has_video'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Applies hero-specific template variables for editorial page nodes.
+ */
+function rpprac_apply_page_hero_variables(array &$variables, \Drupal\node\NodeInterface $node): void {
+  if (!$node->hasField('field_hero_title') || !$node->hasField('field_hero_text') || !$node->hasField('field_hero_image')) {
+    return;
+  }
+
+  $variables['agecomevent_page_has_hero'] = FALSE;
+  $variables['agecomevent_hero_background_mode'] = 'image';
+
+  $hero_title = '';
+  if ($node->hasField('field_hero_title') && !$node->get('field_hero_title')->isEmpty()) {
+    $hero_title = trim((string) $node->get('field_hero_title')->value);
+  }
+  $variables['agecomevent_page_hero_title'] = $hero_title !== '' ? $hero_title : $node->label();
+
+  if ($node->hasField('field_hero_background_mode') && !$node->get('field_hero_background_mode')->isEmpty()) {
+    $variables['agecomevent_hero_background_mode'] = $node->get('field_hero_background_mode')->value;
+  }
+
+  if ($node->hasField('field_hero_image') && !$node->get('field_hero_image')->isEmpty()) {
+    $image = $node->get('field_hero_image')->entity;
+    if ($image) {
+      $image_url = \Drupal::service('file_url_generator')->generateString($image->getFileUri());
+      $variables['agecomevent_hero_background_image_url'] = $image_url;
+      $variables['agecomevent_hero_background_style'] = '--agecomevent-hero-background: url("' . $image_url . '");';
+      $variables['agecomevent_hero_video_poster_url'] = $image_url;
+      $variables['agecomevent_page_has_hero'] = TRUE;
+    }
+  }
+
+  if ($variables['agecomevent_hero_background_mode'] === 'video' && $node->hasField('field_hero_background_video') && !$node->get('field_hero_background_video')->isEmpty()) {
+    $video = $node->get('field_hero_background_video')->entity;
+    if ($video) {
+      $variables['agecomevent_hero_background_video_url'] = \Drupal::service('file_url_generator')->generateString($video->getFileUri());
+      $variables['agecomevent_hero_has_video'] = TRUE;
+      $variables['agecomevent_page_has_hero'] = TRUE;
+    }
+  }
+
+  if ($variables['agecomevent_page_hero_title'] !== '') {
+    $variables['agecomevent_page_has_hero'] = TRUE;
+  }
+}
+
+/**
+ * Loads the first available custom block for a homepage singleton bundle.
+ */
+function rpprac_load_homepage_singleton(string $bundle): array {
+  $storage = \Drupal::entityTypeManager()->getStorage('block_content');
+  $candidates = $storage->loadByProperties([
+    'type' => $bundle,
+  ]);
+
+  if ($candidates === []) {
+    return [];
+  }
+
+  uasort($candidates, static function ($left, $right): int {
+    return ($left->id() ?? 0) <=> ($right->id() ?? 0);
+  });
+
+  $selected = NULL;
+  foreach ($candidates as $candidate) {
+    if (!$candidate instanceof \Drupal\block_content\BlockContentInterface) {
+      continue;
+    }
+
+    if ((bool) $candidate->get('reusable')->value) {
+      $selected = $candidate;
+      break;
+    }
+
+    if ($selected === NULL) {
+      $selected = $candidate;
+    }
+  }
+
+  if (!$selected instanceof \Drupal\block_content\BlockContentInterface) {
+    return [];
+  }
+
+  $theme_map = [
+    'accueil_hero' => 'agecomevent_home_hero',
+    'accueil_positionnement' => 'agecomevent_home_positionnement',
+    'accueil_cibles' => 'agecomevent_home_cibles',
+    'accueil_differenciation' => 'agecomevent_home_differenciation',
+    'accueil_methode' => 'agecomevent_home_methode',
+    'accueil_ancrage_local' => 'agecomevent_home_ancrage_local',
+    'accueil_contact_final' => 'agecomevent_home_contact_final',
+  ];
+
+  if (!isset($theme_map[$bundle])) {
+    return [];
+  }
+
+  $content = \Drupal::entityTypeManager()
+    ->getViewBuilder('block_content')
+    ->view($selected, 'full');
+
+  $build = [
+    '#theme' => $theme_map[$bundle],
+    '#content' => $content,
+    '#attributes' => new Attribute(),
+    '#agecomevent_has_section_image' => $selected->hasField('field_section_image') && !$selected->get('field_section_image')->isEmpty(),
+    '#cache' => [
+      'tags' => $selected->getCacheTags(),
+      'contexts' => $selected->getCacheContexts(),
+      'max-age' => $selected->getCacheMaxAge(),
+    ],
+  ];
+
+  if ($bundle === 'accueil_hero') {
+    $hero_variables = [];
+    rpprac_apply_hero_block_content_variables($hero_variables, $selected);
+    foreach ($hero_variables as $key => $value) {
+      $build['#' . $key] = $value;
+    }
+  }
+
+  return $build;
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function rpprac_preprocess_html(array &$variables) {
+  $variables['b5_body_schema'] = '';
+  $variables['b5_body_bg_schema'] = '';
+  $variables['b5_theme_mode'] = 'light';
+
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('rpprac');
+  $base_path = \Drupal::request()->getBasePath();
+  $variables['agecomevent_favicon_path'] = $base_path . '/' . $theme_path . '/logo.png';
+  $variables['agecomevent_favicon_fallback_path'] = $base_path . '/' . $theme_path . '/logo.png';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function rpprac_preprocess_page(array &$variables) {
+  $variables['b5_top_container'] = 'container';
+  $variables['b5_navbar_schema'] = 'dark';
+  $variables['b5_navbar_bg_schema'] = 'dark';
+  $variables['b5_footer_schema'] = 'dark';
+  $variables['b5_footer_bg_schema'] = 'dark';
+
+  $variables['agecomevent_is_block_demo'] = \Drupal::routeMatch()->getRouteName() === 'block.admin_demo';
+  $variables['agecomevent_page_has_editorial_hero'] = FALSE;
+
+  $variables['agecomevent_home_hero'] = [];
+  $variables['agecomevent_home_positioning'] = [];
+  $variables['agecomevent_home_targets'] = [];
+  $variables['agecomevent_home_differentiation'] = [];
+  $variables['agecomevent_home_method'] = [];
+  $variables['agecomevent_home_local'] = [];
+  $variables['agecomevent_home_contact'] = [];
+
+  $route_node = \Drupal::routeMatch()->getParameter('node');
+  if ($route_node instanceof \Drupal\node\NodeInterface && $route_node->bundle() === 'page') {
+    $variables['agecomevent_page_has_editorial_hero'] = TRUE;
+    unset($variables['page']['content']['agecomevent_page_title']);
+  }
+
+  if (!\Drupal::service('path.matcher')->isFrontPage()) {
+    return;
+  }
+
+  $variables['agecomevent_home_hero'] = rpprac_load_homepage_singleton('accueil_hero');
+  $variables['agecomevent_home_positioning'] = rpprac_load_homepage_singleton('accueil_positionnement');
+  $variables['agecomevent_home_targets'] = rpprac_load_homepage_singleton('accueil_cibles');
+  $variables['agecomevent_home_differentiation'] = rpprac_load_homepage_singleton('accueil_differenciation');
+  $variables['agecomevent_home_method'] = rpprac_load_homepage_singleton('accueil_methode');
+  $variables['agecomevent_home_local'] = rpprac_load_homepage_singleton('accueil_ancrage_local');
+  $variables['agecomevent_home_contact'] = rpprac_load_homepage_singleton('accueil_contact_final');
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function rpprac_preprocess_block(array &$variables) {
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('rpprac');
+  $base_path = \Drupal::request()->getBasePath();
+
+  if (($variables['plugin_id'] ?? '') === 'system_branding_block') {
+    $variables['site_logo'] = $base_path . '/' . $theme_path . '/logo.png';
+    $variables['agecomevent_logo_path'] = $variables['site_logo'];
+  }
+
+  $block_content = $variables['elements']['content']['#block_content'] ?? NULL;
+  if (!$block_content instanceof \Drupal\block_content\BlockContentInterface) {
+    return;
+  }
+
+  rpprac_apply_hero_block_content_variables($variables, $block_content);
+}
+
+/**
+ * Implements hook_preprocess_block_content().
+ */
+function rpprac_preprocess_block_content(array &$variables) {
+  $block_content = $variables['elements']['#block_content'] ?? NULL;
+  if (!$block_content instanceof \Drupal\block_content\BlockContentInterface) {
+    return;
+  }
+
+  rpprac_apply_hero_block_content_variables($variables, $block_content);
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function rpprac_preprocess_node(array &$variables) {
+  $node = $variables['node'] ?? NULL;
+  if (!$node instanceof \Drupal\node\NodeInterface || ($variables['view_mode'] ?? '') !== 'full') {
+    return;
+  }
+
+  rpprac_apply_page_hero_variables($variables, $node);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function rpprac_preprocess_paragraph(array &$variables) {
+  $paragraph = $variables['paragraph'] ?? NULL;
+  if (!$paragraph instanceof \Drupal\paragraphs\ParagraphInterface) {
+    return;
+  }
+
+  if ($paragraph->bundle() === 'section_item') {
+    $variables['agecomevent_has_section_item_image'] = $paragraph->hasField('field_item_image') && !$paragraph->get('field_item_image')->isEmpty();
+    $variables['agecomevent_has_section_item_links'] = $paragraph->hasField('field_item_links') && !$paragraph->get('field_item_links')->isEmpty();
+    return;
+  }
+
+  if ($paragraph->bundle() !== 'view_embed_section') {
+    return;
+  }
+
+  $variables['agecomevent_has_embedded_view'] = FALSE;
+  $variables['agecomevent_embedded_view'] = [];
+
+  $view_id = '';
+  $display_id = 'block_1';
+
+  if ($paragraph->hasField('field_view_selector') && !$paragraph->get('field_view_selector')->isEmpty()) {
+    $selected_view = trim((string) $paragraph->get('field_view_selector')->value);
+    if ($selected_view !== '') {
+      [$view_id, $display_id] = array_pad(explode(':', $selected_view, 2), 2, 'block_1');
+      $view_id = trim($view_id);
+      $display_id = trim($display_id) !== '' ? trim($display_id) : 'block_1';
+    }
+  }
+
+  if ($view_id === '' && $paragraph->hasField('field_view_id')) {
+    $view_id = trim((string) $paragraph->get('field_view_id')->value);
+  }
+
+  if (($display_id === '' || $display_id === 'block_1') && $paragraph->hasField('field_view_display_id') && !$paragraph->get('field_view_display_id')->isEmpty()) {
+    $legacy_display_id = trim((string) $paragraph->get('field_view_display_id')->value);
+    if ($legacy_display_id !== '') {
+      $display_id = $legacy_display_id;
+    }
+  }
+
+  if ($view_id === '' || !function_exists('views_embed_view')) {
+    return;
+  }
+
+  $embedded_view = views_embed_view($view_id, $display_id);
+  if (!is_array($embedded_view) || $embedded_view === []) {
+    return;
+  }
+
+  $variables['agecomevent_embedded_view'] = $embedded_view;
+  $variables['agecomevent_has_embedded_view'] = TRUE;
+}

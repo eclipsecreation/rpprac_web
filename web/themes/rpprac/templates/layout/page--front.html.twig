@@ -1,0 +1,150 @@
+{#
+/**
+ * @file
+ * Theme override for the front page.
+ */
+#}
+{%
+set nav_classes = 'navbar navbar-expand-lg border-bottom' ~
+  (b5_navbar_schema != 'none' ? " navbar-#{b5_navbar_schema}" : ' ') ~
+  (b5_navbar_schema != 'none' ? (b5_navbar_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
+  (b5_navbar_bg_schema != 'none' ? " bg-#{b5_navbar_bg_schema}" : ' bg-white ')
+%}
+
+{%
+set footer_classes = 'agecomevent-footer mt-auto py-4' ~
+  (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
+  (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' text-dark ') ~
+  (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' bg-light ')
+%}
+
+<div id="top" class="agecomevent-page agecomevent-front-page">
+  <header role="banner">
+    {% if page.header %}
+      <div class="agecomevent-header-top py-2">
+        <div class="{{ b5_top_container }}">
+          {{ page.header }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.nav_branding or page.nav_main or page.nav_additional %}
+      <nav class="{{ nav_classes }}">
+        <div class="{{ b5_top_container }} d-flex align-items-center">
+          {{ page.nav_branding }}
+
+          {% if page.nav_main or page.nav_additional %}
+            <button class="navbar-toggler collapsed ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+              {{ page.nav_main }}
+              {{ page.nav_additional }}
+            </div>
+          {% endif %}
+        </div>
+      </nav>
+    {% endif %}
+  </header>
+
+  <main role="main" class="agecomevent-main agecomevent-home-main">
+    <a id="main-content" tabindex="-1"></a>
+
+    {% if page.breadcrumb %}
+      <div class="{{ b5_top_container }} agecomevent-front-breadcrumb">
+        {{ page.breadcrumb }}
+      </div>
+    {% endif %}
+
+    {% if agecomevent_home_hero or page.home_hero %}
+      <section class="agecomevent-home-section agecomevent-home-section--hero">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_hero ?: page.home_hero }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if agecomevent_home_positioning or page.home_positioning %}
+      <section class="agecomevent-home-section agecomevent-home-section--positioning">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_positioning ?: page.home_positioning }}
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="agecomevent-home-section agecomevent-home-section--expertises">
+      <div class="{{ b5_top_container }}">
+        {{ page.home_expertises }}
+      </div>
+    </section>
+
+    {% if agecomevent_home_targets or page.home_targets %}
+      <section class="agecomevent-home-section agecomevent-home-section--targets">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_targets ?: page.home_targets }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if agecomevent_home_differentiation or page.home_differentiation %}
+      <section class="agecomevent-home-section agecomevent-home-section--differentiation">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_differentiation ?: page.home_differentiation }}
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="agecomevent-home-section agecomevent-home-section--realizations">
+      <div class="{{ b5_top_container }}">
+        {{ page.home_realizations }}
+      </div>
+    </section>
+
+    {% if agecomevent_home_method or page.home_method %}
+      <section class="agecomevent-home-section agecomevent-home-section--method">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_method ?: page.home_method }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if agecomevent_home_local or page.home_local %}
+      <section class="agecomevent-home-section agecomevent-home-section--local">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_local ?: page.home_local }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if agecomevent_home_contact or page.home_contact %}
+      <section class="agecomevent-home-section agecomevent-home-section--contact">
+        <div class="{{ b5_top_container }}">
+          {{ agecomevent_home_contact ?: page.home_contact }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.content %}
+      <section class="agecomevent-home-section agecomevent-home-section--content">
+        <div class="{{ b5_top_container }}">
+          {{ page.content }}
+        </div>
+      </section>
+    {% endif %}
+  </main>
+
+  {% if page.footer %}
+    <footer role="contentinfo" class="{{ footer_classes }}">
+      <div class="{{ b5_top_container }}">
+        {{ page.footer }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <a class="agecomevent-back-to-top" href="#top" aria-label="{{ 'Back to top'|t }}">
+    <span aria-hidden="true">↑</span>
+  </a>
+</div>

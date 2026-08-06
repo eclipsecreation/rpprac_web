@@ -1,0 +1,12 @@
+recaptcha_v3:
+  js:
+    js/recaptcha_v3.js: { weight: 0 }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+recaptcha_v3_no_badge:
+  css:
+    theme:
+      css/recaptcha_v3_no_badge.css: { weight: -10 }

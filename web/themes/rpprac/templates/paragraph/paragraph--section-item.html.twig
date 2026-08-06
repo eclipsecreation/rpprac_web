@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for reusable homepage section items.
+ */
+#}
+<article{{ attributes.addClass('agecomevent-section-item') }}>
+  {% if agecomevent_has_section_item_image %}
+    <div class="agecomevent-section-item__media">{{ content.field_item_image }}</div>
+  {% endif %}
+
+  <div class="agecomevent-section-item__body">
+    {% if content.field_item_title %}
+      <h3 class="agecomevent-section-item__title">{{ content.field_item_title }}</h3>
+    {% endif %}
+
+    {% if content.field_item_text %}
+      <div class="agecomevent-section-item__text">{{ content.field_item_text }}</div>
+    {% endif %}
+
+    {% if agecomevent_has_section_item_links %}
+      <div class="agecomevent-section-item__actions">{{ content.field_item_links }}</div>
+    {% endif %}
+  </div>
+</article>

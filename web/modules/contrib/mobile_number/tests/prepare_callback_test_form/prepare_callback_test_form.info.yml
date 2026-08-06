@@ -1,0 +1,11 @@
+name: prepare_callback_test_form
+type: module
+description: Provides a PrepareCallback form for testing
+core_version_requirement: ^8.8 || ^9 || ^10
+# version: VERSION
+hidden: true
+
+# Information added by Drupal.org packaging script on 2024-01-16
+version: '2.0.2'
+project: 'mobile_number'
+datestamp: 1705431928

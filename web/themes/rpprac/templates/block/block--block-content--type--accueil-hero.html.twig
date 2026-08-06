@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for the home hero custom block.
+ */
+#}
+{% set hero_title = content.field_section_title|render|striptags|trim %}
+<div{{ attributes.addClass('agecomevent-hero-block') }}{% if agecomevent_hero_background_style %} style="{{ agecomevent_hero_background_style }}"{% endif %}>
+  {% if agecomevent_hero_has_video and agecomevent_hero_background_video_url %}
+    <div class="agecomevent-hero-block__media" aria-hidden="true">
+      <video class="agecomevent-hero-block__video" autoplay muted loop playsinline preload="metadata"{% if agecomevent_hero_video_poster_url %} poster="{{ agecomevent_hero_video_poster_url }}"{% endif %}>
+        <source src="{{ agecomevent_hero_background_video_url }}">
+      </video>
+    </div>
+  {% endif %}
+  <div class="agecomevent-hero-block__inner">
+    <div class="agecomevent-hero-block__content">
+      {% if hero_title %}
+        <h1 class="agecomevent-hero-block__title">{{ hero_title }}</h1>
+      {% endif %}
+
+      {% if content.field_section_text %}
+        <div class="agecomevent-hero-block__text">{{ content.field_section_text }}</div>
+      {% endif %}
+
+      {% if content.field_primary_cta or content.field_secondary_cta %}
+        <div class="agecomevent-hero-block__actions">
+          {% if content.field_primary_cta %}
+            <div class="agecomevent-hero-block__action agecomevent-hero-block__action--primary">{{ content.field_primary_cta }}</div>
+          {% endif %}
+          {% if content.field_secondary_cta %}
+            <div class="agecomevent-hero-block__action agecomevent-hero-block__action--secondary">{{ content.field_secondary_cta }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if content.field_proof_items %}
+        <div class="agecomevent-hero-block__proofs">{{ content.field_proof_items }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>

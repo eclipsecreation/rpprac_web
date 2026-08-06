@@ -1,0 +1,146 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for stripe_webform_payment module.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\webform\WebformSubmissionInterface;
+use Drupal\Core\Cache\CacheBackendInterface;
+
+/**
+ * Implements hook_token_info().
+ */
+function stripe_webform_payment_token_info() {
+  $type = [
+    'name' => t('Stripe Payment'),
+    'description' => t('Tokens for Stripe Payment webform elements.'),
+  ];
+
+  // Add a dynamic token for each "stripe_payment" webform element and its properties.
+  $tokens['%element_id:%property_id'] = [
+    'name' => t('Stripe Payment Element Property'),
+    'description' => t('A dynamic token for a custom "stripe_payment" webform element property.'),
+    'dynamic' => TRUE,
+  ];
+
+  return [
+    'types' => ['stripe_payment' => $type],
+    'tokens' => ['stripe_payment' => $tokens],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function stripe_webform_payment_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  if ($type !== 'stripe_payment') {
+    return;
+  }
+
+  $webformSubmission = $data['webform_submission'] ??
+    ($data[$type] ?? NULL);
+  if (!$webformSubmission instanceof WebformSubmissionInterface) {
+    return [];
+  }
+
+  $webform = $webformSubmission?->getWebform() ?? NULL;
+  if (!$webform) {
+    return [];
+  }
+
+  // Get the cache backend.
+  $cache = \Drupal::service('cache.default');
+
+  foreach ($tokens as $name => $original) {
+    // Extract the element ID and property ID from the token name.
+    [$elementId, $propertyId] = explode(':', $name, 2);
+
+    // Check if the token name corresponds to a "stripe_payment" webform element.
+    $element = $webform->getElement($elementId);
+    if ($element && $element['#type'] === 'stripe_payment') {
+      $paymentIntentId = $webformSubmission->getElementData($elementId);
+
+      if ($paymentIntentId) {
+        $cacheKey = 'stripe_payment:' . $paymentIntentId;
+        if ($cache_item = $cache->get($cacheKey)) {
+          $paymentIntent = $cache_item->data;
+        }
+        else {
+          // Fetch the PaymentIntent object from Stripe API.
+          $paymentIntent = getPaymentIntent($paymentIntentId);
+          $availableReplacement = getReplacements($paymentIntent);
+          // Cache the PaymentIntent object for future use.
+          if (!empty($availableReplacement)) {
+            $cache->set($cacheKey, $paymentIntent, CacheBackendInterface::CACHE_PERMANENT, ['stripe_payment']);
+          }
+        }
+
+        if (empty($availableReplacement)) {
+          return [];
+        }
+
+        // Generate the replacement value for the token based on the property ID.
+        if (array_key_exists($propertyId, $availableReplacement)) {
+          $replacements[$original] = $availableReplacement[$propertyId];
+        }
+      }
+    }
+  }
+
+  return $replacements;
+}
+
+/**
+ * Custom function to get tokens replacements.
+ *
+ * @param array $paymentIntent
+ *   The Stripe payment intent as an array.
+ * @param string $prefix
+ *   The key prefix to generate data from multidimensional array.
+ *
+ * @return array
+ *   Array of replacement tokens.
+ */
+function getReplacements(array $paymentIntent, string $prefix = ''): array {
+  $availableReplacements = [];
+  foreach ($paymentIntent as $key => $value) {
+    // If $prefix is not empty, add a colon separator.
+    $fullKey = $prefix !== '' ? $prefix . ':' . $key : $key;
+
+    if (is_array($value)) {
+      $nestedReplacements = getReplacements($value, $fullKey);
+      $availableReplacements = array_merge($availableReplacements, $nestedReplacements);
+    }
+    else {
+      $availableReplacements[$fullKey] = $value;
+    }
+  }
+  return $availableReplacements;
+}
+
+/**
+ * Returns payment intent.
+ *
+ * @param string $paymentIntentId
+ *   The payment intent ID.
+ *
+ * @return array
+ *   The payment intent as an array.
+ */
+function getPaymentIntent(string $paymentIntentId): array {
+  // Get the payment intent object.
+  $stripeService = \Drupal::service('stripe_webform_payment.stripe');
+  $paymentIntent = $stripeService
+    ->getPaymentIntent($paymentIntentId);
+
+  $paymentIntent = $paymentIntent?->toArray();
+  if (empty($paymentIntent)) {
+    return [];
+  }
+
+  return $paymentIntent;
+}

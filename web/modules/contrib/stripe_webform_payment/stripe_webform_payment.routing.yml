@@ -1,0 +1,7 @@
+stripe_webform_payment.example:
+  path: '/stripe-webform-payment/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\stripe_webform_payment\Controller\StripeWebformPaymentController::build'
+  requirements:
+    _permission: 'access content'

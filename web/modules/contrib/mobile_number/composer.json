@@ -1,0 +1,29 @@
+{
+    "name": "drupal/mobile_number",
+    "description": "Mobile number field with sms verification.",
+    "type": "drupal-module",
+    "homepage": "http://drupal.org/project/mobile_number",
+    "authors": [
+        {
+            "name": "Nir Yariv",
+            "email": "nir@dofinity.com",
+            "homepage": "http://dofinity.com",
+            "role": "Maintainer"
+        }
+    ],
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "giggsey/libphonenumber-for-php": "^8.0"
+    },
+    "require-dev": {
+        "drupal/smsframework": "^2.2@RC",
+        "drupal/dynamic_entity_reference": "^3 || ^4"
+    }
+}
