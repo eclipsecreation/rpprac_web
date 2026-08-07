@@ -1,0 +1,22 @@
+uuid: 6de1f6bc-de0f-4e98-a2f4-60616e694408
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rpprac
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: rpprac_powered
+theme: rpprac
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: ab403c41-fd7e-477d-8a83-913f8cfc2831
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rpprac
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: rpprac_breadcrumbs
+theme: rpprac
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

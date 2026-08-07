@@ -1,0 +1,22 @@
+uuid: 9b9f2ed5-88bb-488b-a377-c9dcd44a4357
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - rpprac
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: rpprac_help
+theme: rpprac
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
