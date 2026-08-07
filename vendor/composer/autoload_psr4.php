@@ -66,8 +66,6 @@ return array(
     'Giggsey\\Locale\\' => array($vendorDir . '/giggsey/locale/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Drush\\' => array($vendorDir . '/drush/drush/src'),
-    'Drupal\\paragraphs\\' => array($baseDir . '/web/modules/contrib/paragraphs/src'),
-    'Drupal\\entity_reference_revisions\\' => array($baseDir . '/web/modules/contrib/entity_reference_revisions/src'),
     'Drupal\\Core\\' => array($baseDir . '/web/core/lib/Drupal/Core'),
     'Drupal\\Composer\\Plugin\\Scaffold\\' => array($vendorDir . '/drupal/core-composer-scaffold'),
     'Drupal\\Composer\\Plugin\\ProjectMessage\\' => array($vendorDir . '/drupal/core-project-message'),

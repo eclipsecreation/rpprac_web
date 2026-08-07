@@ -59,12 +59,6 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "autoload": {
-        "psr-4": {
-            "Drupal\\entity_reference_revisions\\": "web/modules/contrib/entity_reference_revisions/src/",
-            "Drupal\\paragraphs\\": "web/modules/contrib/paragraphs/src/"
-        }
-    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
