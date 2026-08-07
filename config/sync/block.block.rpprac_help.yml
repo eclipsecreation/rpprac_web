@@ -11,7 +11,7 @@ _core:
 id: rpprac_help
 theme: rpprac
 region: content
-weight: -4
+weight: -2
 provider: null
 plugin: help_block
 settings:

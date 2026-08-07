@@ -9,7 +9,7 @@ _core:
 id: rpprac_primary_admin_actions
 theme: rpprac
 region: content
-weight: -3
+weight: 0
 provider: null
 plugin: local_actions_block
 settings:

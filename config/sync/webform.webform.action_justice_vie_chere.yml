@@ -13,38 +13,53 @@ title: 'Action justice vie chère'
 description: ''
 categories: {  }
 elements: |-
-  nom:
-    '#type': textfield
-    '#title': Nom
+  flexbox:
+    '#type': webform_flexbox
+    nom:
+      '#type': textfield
+      '#title': Nom
+      '#required': true
+    prenoms:
+      '#type': textfield
+      '#title': Prénoms
+      '#required': true
+  flexbox_01:
+    '#type': webform_flexbox
+    courriel:
+      '#type': email
+      '#title': Courriel
+      '#required': true
+    telephone:
+      '#type': textfield
+      '#title': Téléphone
+      '#required': true
+  flexbox_02:
+    '#type': webform_flexbox
+    adresse:
+      '#type': textfield
+      '#title': Adresse
+      '#required': true
+    complement_adresse:
+      '#type': textfield
+      '#title': 'Complément adresse'
+    cp:
+      '#type': textfield
+      '#title': CP
+      '#maxlength': 5
+      '#size': 5
+      '#required': true
+    ville:
+      '#type': textfield
+      '#title': Ville
+      '#required': true
+  piece_d_identite:
+    '#type': managed_file
+    '#title': "Pièce d'identité recto verso"
+    '#multiple': 2
     '#required': true
-  prenoms:
-    '#type': textfield
-    '#title': Prénoms
-    '#required': true
-  courriel:
-    '#type': email
-    '#title': Courriel
-    '#required': true
-  telephone:
-    '#type': textfield
-    '#title': Téléphone
-    '#required': true
-  adresse:
-    '#type': textfield
-    '#title': Adresse
-    '#required': true
-  complement_adresse:
-    '#type': textfield
-    '#title': 'Complément adresse'
-  cp:
-    '#type': textfield
-    '#title': CP
-    '#maxlength': 5
-    '#size': 5
-    '#required': true
-  ville:
-    '#type': textfield
-    '#title': Ville
+  justificatif_d_adresse:
+    '#type': managed_file
+    '#title': "Justificatif d'adresse"
     '#required': true
 css: ''
 javascript: ''

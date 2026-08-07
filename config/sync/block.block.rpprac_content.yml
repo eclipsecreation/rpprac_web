@@ -11,7 +11,7 @@ _core:
 id: rpprac_content
 theme: rpprac
 region: content
-weight: -7
+weight: 1
 provider: null
 plugin: system_main_block
 settings:
