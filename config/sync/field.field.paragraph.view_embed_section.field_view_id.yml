@@ -1,0 +1,19 @@
+uuid: c1242a68-61dc-4486-8169-b94986be79e7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_id
+    - paragraphs.paragraphs_type.view_embed_section
+id: paragraph.view_embed_section.field_view_id
+field_name: field_view_id
+entity_type: paragraph
+bundle: view_embed_section
+label: 'Vue (ID machine)'
+description: 'Exemple: accueil_expertises, accueil_realisations ou actualites.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

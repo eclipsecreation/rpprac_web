@@ -1,0 +1,21 @@
+uuid: a0917829-2fe1-4a9c-a60d-58e06beac4d7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_selector
+    - paragraphs.paragraphs_type.view_embed_section
+  module:
+    - options
+id: paragraph.view_embed_section.field_view_selector
+field_name: field_view_selector
+entity_type: paragraph
+bundle: view_embed_section
+label: 'Bloc de vue'
+description: 'Selectionner une vue bloc parmi les vues actives du site.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
