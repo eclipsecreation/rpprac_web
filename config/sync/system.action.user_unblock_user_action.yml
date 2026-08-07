@@ -1,5 +1,5 @@
 uuid: 2bbde32b-c21b-4a65-ace0-555e7c2a8b69
-langcode: en
+langcode: fr
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: SPsUXsR3Rc8d1y3gewzaAKWa1ncea_ywXX3f7LTn7k0
 id: user_unblock_user_action
-label: 'Unblock the selected user(s)'
+label: 'Débloquer le(s) utilisateur(s) sélectionné(s)'
 type: user
 plugin: user_unblock_user_action
 configuration: {  }
