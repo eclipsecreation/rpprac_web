@@ -5,22 +5,22 @@
  */
 #}
 {% set section_title = content.field_section_title|render|striptags|trim %}
-<div{{ attributes.addClass('agecomevent-differentiation-block') }}>
-  <div class="agecomevent-differentiation-block__content">
+<div{{ attributes.addClass('rpprac-differentiation-block') }}>
+  <div class="rpprac-differentiation-block__content">
     {% if section_title %}
-      <h2 class="agecomevent-differentiation-block__title">{{ section_title }}</h2>
+      <h2 class="rpprac-differentiation-block__title">{{ section_title }}</h2>
     {% endif %}
 
     {% if content.field_section_intro %}
-      <div class="agecomevent-differentiation-block__intro">{{ content.field_section_intro }}</div>
+      <div class="rpprac-differentiation-block__intro">{{ content.field_section_intro }}</div>
     {% endif %}
 
     {% if content.field_section_items %}
-      <div class="agecomevent-differentiation-block__items">{{ content.field_section_items }}</div>
+      <div class="rpprac-differentiation-block__items">{{ content.field_section_items }}</div>
     {% endif %}
   </div>
 
   {% if content.field_section_image %}
-    <div class="agecomevent-differentiation-block__media">{{ content.field_section_image }}</div>
+    <div class="rpprac-differentiation-block__media">{{ content.field_section_image }}</div>
   {% endif %}
 </div>

@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.section_item.field_item_links
     - field.field.paragraph.section_item.field_item_text
     - field.field.paragraph.section_item.field_item_title
-    - image.style.large
+    - image.style.moyen_integral
     - paragraphs.paragraphs_type.section_item
   module:
     - image
@@ -23,7 +23,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: moyen_integral
       image_loading:
         attribute: lazy
     third_party_settings: {  }

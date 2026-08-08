@@ -5,29 +5,29 @@
  */
 #}
 {% set section_title = content.field_section_title|render|striptags|trim %}
-<div{{ attributes.addClass('agecomevent-contact-block') }}>
-  <div class="agecomevent-contact-block__content">
+<div{{ attributes.addClass('rpprac-contact-block') }}>
+  <div class="rpprac-contact-block__content">
     {% if section_title %}
-      <h2 class="agecomevent-contact-block__title">{{ section_title }}</h2>
+      <h2 class="rpprac-contact-block__title">{{ section_title }}</h2>
     {% endif %}
 
     {% if content.field_section_text %}
-      <div class="agecomevent-contact-block__text">{{ content.field_section_text }}</div>
+      <div class="rpprac-contact-block__text">{{ content.field_section_text }}</div>
     {% endif %}
 
     {% if content.field_primary_cta or content.field_secondary_cta %}
-      <div class="agecomevent-contact-block__actions">
+      <div class="rpprac-contact-block__actions">
         {% if content.field_primary_cta %}
-          <div class="agecomevent-contact-block__action agecomevent-contact-block__action--primary">{{ content.field_primary_cta }}</div>
+          <div class="rpprac-contact-block__action rpprac-contact-block__action--primary">{{ content.field_primary_cta }}</div>
         {% endif %}
         {% if content.field_secondary_cta %}
-          <div class="agecomevent-contact-block__action agecomevent-contact-block__action--secondary">{{ content.field_secondary_cta }}</div>
+          <div class="rpprac-contact-block__action rpprac-contact-block__action--secondary">{{ content.field_secondary_cta }}</div>
         {% endif %}
       </div>
     {% endif %}
   </div>
 
-  {% if agecomevent_has_section_image %}
-    <div class="agecomevent-contact-block__media">{{ content.field_section_image }}</div>
+  {% if rpprac_has_section_image %}
+    <div class="rpprac-contact-block__media">{{ content.field_section_image }}</div>
   {% endif %}
 </div>

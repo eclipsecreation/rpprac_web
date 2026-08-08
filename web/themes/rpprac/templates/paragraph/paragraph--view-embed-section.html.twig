@@ -4,15 +4,15 @@
  * Theme override for page sections embedding a Views block display.
  */
 #}
-{% if agecomevent_has_embedded_view %}
-  <section{{ attributes.addClass('agecomevent-view-section') }}>
+{% if rpprac_has_embedded_view %}
+  <section{{ attributes.addClass('rpprac-view-section') }}>
     {% set section_title = content.field_item_title|render|striptags|trim %}
     {% if section_title != '' %}
-      <h2 class="agecomevent-view-section__title">{{ content.field_item_title }}</h2>
+      <h2 class="rpprac-view-section__title">{{ content.field_item_title }}</h2>
     {% endif %}
 
-    <div class="agecomevent-view-section__content">
-      {{ agecomevent_embedded_view }}
+    <div class="rpprac-view-section__content">
+      {{ rpprac_embedded_view }}
     </div>
   </section>
 {% endif %}

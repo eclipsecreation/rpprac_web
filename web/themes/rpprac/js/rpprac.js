@@ -2,9 +2,9 @@
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
-    document.documentElement.classList.add('agecomevent-ready');
+    document.documentElement.classList.add('rpprac-ready');
 
-    var backToTopLink = document.querySelector('.agecomevent-back-to-top');
+    var backToTopLink = document.querySelector('.rpprac-back-to-top');
 
     if (!backToTopLink) {
       return;

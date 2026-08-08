@@ -6,23 +6,23 @@
 #}
 <div{{ attributes.addClass('view', 'view-accueil-realisations-home') }}>
   {% if title %}
-    <div class="agecomevent-section-heading">
-      <h2 class="agecomevent-section-heading__title">{{ title }}</h2>
+    <div class="rpprac-section-heading">
+      <h2 class="rpprac-section-heading__title">{{ title }}</h2>
     </div>
   {% endif %}
 
   {% if header %}
-    <div class="agecomevent-section-heading__intro">
+    <div class="rpprac-section-heading__intro">
       {{ header }}
     </div>
   {% endif %}
 
-  <div class="agecomevent-realisation-grid">
+  <div class="rpprac-realisation-grid">
     {{ rows }}
   </div>
 
   {% if footer %}
-    <div class="agecomevent-section-footer">
+    <div class="rpprac-section-footer">
       {{ footer }}
     </div>
   {% endif %}

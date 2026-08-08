@@ -12,7 +12,7 @@
     db_offline ? 'db-offline',
     (b5_body_schema == 'light' ? ' text-dark' : (b5_body_schema == 'dark' ? ' text-light' :  ' ')),
     (b5_body_bg_schema != 'none' ? " bg-#{b5_body_bg_schema}" : ' '),
-    'agecomevent-theme',
+    'rpprac-theme',
     'd-flex flex-column h-100'
   ]
 %}
@@ -22,8 +22,8 @@
   <head>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <link rel="icon" href="{{ agecomevent_favicon_path }}" type="image/png">
-    <link rel="alternate icon" href="{{ agecomevent_favicon_fallback_path }}" type="image/png">
+    <link rel="icon" href="{{ rpprac_favicon_path }}" type="image/png">
+    <link rel="alternate icon" href="{{ rpprac_favicon_fallback_path }}" type="image/png">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>

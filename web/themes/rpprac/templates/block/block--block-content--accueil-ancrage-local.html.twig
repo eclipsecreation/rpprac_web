@@ -5,18 +5,18 @@
  */
 #}
 {% set section_title = content.field_section_title|render|striptags|trim %}
-<div{{ attributes.addClass('agecomevent-local-block') }}>
-  <div class="agecomevent-local-block__content">
+<div{{ attributes.addClass('rpprac-local-block') }}>
+  <div class="rpprac-local-block__content">
     {% if section_title %}
-      <h2 class="agecomevent-local-block__title">{{ section_title }}</h2>
+      <h2 class="rpprac-local-block__title">{{ section_title }}</h2>
     {% endif %}
 
     {% if content.field_section_text %}
-      <div class="agecomevent-local-block__text">{{ content.field_section_text }}</div>
+      <div class="rpprac-local-block__text">{{ content.field_section_text }}</div>
     {% endif %}
   </div>
 
   {% if content.field_section_image %}
-    <div class="agecomevent-local-block__media">{{ content.field_section_image }}</div>
+    <div class="rpprac-local-block__media">{{ content.field_section_image }}</div>
   {% endif %}
 </div>

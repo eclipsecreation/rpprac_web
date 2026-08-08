@@ -12,16 +12,16 @@ set nav_classes = 'navbar navbar-expand-lg border-bottom' ~
 %}
 
 {%
-set footer_classes = 'agecomevent-footer mt-auto py-4' ~
+set footer_classes = 'rpprac-footer mt-auto py-4' ~
   (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
   (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' text-dark ') ~
   (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' bg-light ')
 %}
 
-<div id="top" class="agecomevent-page agecomevent-front-page">
+<div id="top" class="rpprac-page rpprac-front-page">
   <header role="banner">
     {% if page.header %}
-      <div class="agecomevent-header-top py-2">
+      <div class="rpprac-header-top py-2">
         <div class="{{ b5_top_container }}">
           {{ page.header }}
         </div>
@@ -50,85 +50,85 @@ set footer_classes = 'agecomevent-footer mt-auto py-4' ~
     {% endif %}
   </header>
 
-  <main role="main" class="agecomevent-main agecomevent-home-main">
+  <main role="main" class="rpprac-main rpprac-home-main">
     <a id="main-content" tabindex="-1"></a>
 
     {% if page.breadcrumb %}
-      <div class="{{ b5_top_container }} agecomevent-front-breadcrumb">
+      <div class="{{ b5_top_container }} rpprac-front-breadcrumb">
         {{ page.breadcrumb }}
       </div>
     {% endif %}
 
-    {% if agecomevent_home_hero or page.home_hero %}
-      <section class="agecomevent-home-section agecomevent-home-section--hero">
+    {% if rpprac_home_hero or page.home_hero %}
+      <section class="rpprac-home-section rpprac-home-section--hero">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_hero ?: page.home_hero }}
+          {{ rpprac_home_hero ?: page.home_hero }}
         </div>
       </section>
     {% endif %}
 
-    {% if agecomevent_home_positioning or page.home_positioning %}
-      <section class="agecomevent-home-section agecomevent-home-section--positioning">
+    {% if rpprac_home_positioning or page.home_positioning %}
+      <section class="rpprac-home-section rpprac-home-section--positioning">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_positioning ?: page.home_positioning }}
+          {{ rpprac_home_positioning ?: page.home_positioning }}
         </div>
       </section>
     {% endif %}
 
-    <section class="agecomevent-home-section agecomevent-home-section--expertises">
+    <section class="rpprac-home-section rpprac-home-section--expertises">
       <div class="{{ b5_top_container }}">
         {{ page.home_expertises }}
       </div>
     </section>
 
-    {% if agecomevent_home_targets or page.home_targets %}
-      <section class="agecomevent-home-section agecomevent-home-section--targets">
+    {% if rpprac_home_targets or page.home_targets %}
+      <section class="rpprac-home-section rpprac-home-section--targets">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_targets ?: page.home_targets }}
+          {{ rpprac_home_targets ?: page.home_targets }}
         </div>
       </section>
     {% endif %}
 
-    {% if agecomevent_home_differentiation or page.home_differentiation %}
-      <section class="agecomevent-home-section agecomevent-home-section--differentiation">
+    {% if rpprac_home_differentiation or page.home_differentiation %}
+      <section class="rpprac-home-section rpprac-home-section--differentiation">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_differentiation ?: page.home_differentiation }}
+          {{ rpprac_home_differentiation ?: page.home_differentiation }}
         </div>
       </section>
     {% endif %}
 
-    <section class="agecomevent-home-section agecomevent-home-section--realizations">
+    <section class="rpprac-home-section rpprac-home-section--realizations">
       <div class="{{ b5_top_container }}">
         {{ page.home_realizations }}
       </div>
     </section>
 
-    {% if agecomevent_home_method or page.home_method %}
-      <section class="agecomevent-home-section agecomevent-home-section--method">
+    {% if rpprac_home_method or page.home_method %}
+      <section class="rpprac-home-section rpprac-home-section--method">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_method ?: page.home_method }}
+          {{ rpprac_home_method ?: page.home_method }}
         </div>
       </section>
     {% endif %}
 
-    {% if agecomevent_home_local or page.home_local %}
-      <section class="agecomevent-home-section agecomevent-home-section--local">
+    {% if rpprac_home_local or page.home_local %}
+      <section class="rpprac-home-section rpprac-home-section--local">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_local ?: page.home_local }}
+          {{ rpprac_home_local ?: page.home_local }}
         </div>
       </section>
     {% endif %}
 
-    {% if agecomevent_home_contact or page.home_contact %}
-      <section class="agecomevent-home-section agecomevent-home-section--contact">
+    {% if rpprac_home_contact or page.home_contact %}
+      <section class="rpprac-home-section rpprac-home-section--contact">
         <div class="{{ b5_top_container }}">
-          {{ agecomevent_home_contact ?: page.home_contact }}
+          {{ rpprac_home_contact ?: page.home_contact }}
         </div>
       </section>
     {% endif %}
 
     {% if page.content %}
-      <section class="agecomevent-home-section agecomevent-home-section--content">
+      <section class="rpprac-home-section rpprac-home-section--content">
         <div class="{{ b5_top_container }}">
           {{ page.content }}
         </div>
@@ -144,7 +144,7 @@ set footer_classes = 'agecomevent-footer mt-auto py-4' ~
     </footer>
   {% endif %}
 
-  <a class="agecomevent-back-to-top" href="#top" aria-label="{{ 'Back to top'|t }}">
+  <a class="rpprac-back-to-top" href="#top" aria-label="{{ 'Back to top'|t }}">
     <span aria-hidden="true">↑</span>
   </a>
 </div>
