@@ -1,0 +1,19 @@
+uuid: 31153e70-c26e-41c5-ad4c-d568c866950b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_hero
+    - field.storage.block_content.field_section_title
+id: block_content.accueil_hero.field_section_title
+field_name: field_section_title
+entity_type: block_content
+bundle: accueil_hero
+label: 'Titre principal'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

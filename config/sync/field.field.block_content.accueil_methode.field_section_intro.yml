@@ -1,0 +1,22 @@
+uuid: 99f67769-badc-4915-aa4b-c15e3d1b0427
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_methode
+    - field.storage.block_content.field_section_intro
+  module:
+    - text
+id: block_content.accueil_methode.field_section_intro
+field_name: field_section_intro
+entity_type: block_content
+bundle: accueil_methode
+label: "Texte d'introduction"
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

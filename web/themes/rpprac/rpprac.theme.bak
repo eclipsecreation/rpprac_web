@@ -239,6 +239,10 @@ function rpprac_preprocess_html(array &$variables) {
   $variables['b5_body_bg_schema'] = '';
   $variables['b5_theme_mode'] = 'light';
 
+  if (isset($variables['html_attributes']) && $variables['html_attributes'] instanceof Attribute) {
+    $variables['html_attributes']->setAttribute('data-bs-theme', 'light');
+  }
+
   $theme_path = \Drupal::service('extension.list.theme')->getPath('rpprac');
   $base_path = \Drupal::request()->getBasePath();
   $variables['rpprac_favicon_path'] = $base_path . '/' . $theme_path . '/logo.png';

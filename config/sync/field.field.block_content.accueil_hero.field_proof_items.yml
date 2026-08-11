@@ -1,0 +1,19 @@
+uuid: ac759afd-988d-4118-9991-c625d4c849d3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_hero
+    - field.storage.block_content.field_proof_items
+id: block_content.accueil_hero.field_proof_items
+field_name: field_proof_items
+entity_type: block_content
+bundle: accueil_hero
+label: 'Elements de reassurance'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

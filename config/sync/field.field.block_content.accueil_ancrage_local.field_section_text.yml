@@ -1,0 +1,22 @@
+uuid: 853cc287-042e-453b-b3a6-70d99962b1d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_ancrage_local
+    - field.storage.block_content.field_section_text
+  module:
+    - text
+id: block_content.accueil_ancrage_local.field_section_text
+field_name: field_section_text
+entity_type: block_content
+bundle: accueil_ancrage_local
+label: Texte
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

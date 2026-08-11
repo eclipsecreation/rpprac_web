@@ -1,0 +1,8 @@
+uuid: 03e61908-96c3-49d8-b15e-3faedaa6e99a
+langcode: fr
+status: true
+dependencies: {  }
+id: accueil_differenciation
+label: 'Accueil - Differenciation'
+revision: false
+description: "Bloc editorial pour la section differenciation de la page d'accueil."

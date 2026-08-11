@@ -1,0 +1,22 @@
+uuid: 64b92073-ba56-4f02-8c82-abc4c9abe267
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo_description
+    - node.type.expertise
+  module:
+    - text
+id: node.expertise.field_seo_description
+field_name: field_seo_description
+entity_type: node
+bundle: expertise
+label: 'SEO description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

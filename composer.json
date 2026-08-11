@@ -56,6 +56,17 @@
         "drupal/webform_views": "^5.6",
         "drush/drush": "^13.6"
     },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\entity_reference_revisions\\": "web/modules/contrib/entity_reference_revisions/src",
+            "Drupal\\pathauto\\": "web/modules/contrib/pathauto/src",
+            "Drupal\\token\\": "web/modules/contrib/token/src",
+            "Drupal\\blazy\\": "web/modules/contrib/blazy/src",
+            "Drupal\\slick\\": "web/modules/contrib/slick/src",
+            "Drupal\\slick_views\\": "web/modules/contrib/slick_views/src",
+            "Drupal\\media\\": "web/core/modules/media/src"
+        }
+    },
     "conflict": {
         "drupal/drupal": "*"
     },

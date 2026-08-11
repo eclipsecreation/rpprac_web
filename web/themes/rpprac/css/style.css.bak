@@ -11,6 +11,54 @@ body {
   --rpprac-footer-text: rgba(255, 255, 255, 0.92);
 }
 
+/* Neutralisation du mode sombre & verrouillage de la charte claire Bootstrap 5 */
+:root,
+[data-bs-theme="dark"],
+[data-bs-theme="light"] {
+  color-scheme: light !important;
+  --bs-body-color: var(--rpprac-ink);
+  --bs-body-bg: var(--rpprac-surface);
+  --bs-emphasis-color: var(--rpprac-ink);
+  --bs-secondary-color: rgba(11, 11, 13, 0.75);
+  --bs-tertiary-color: rgba(11, 11, 13, 0.5);
+  --bs-border-color: var(--rpprac-border);
+}
+
+/* Stabilisation des classes utilitaires Bootstrap 5 (bg-dark, bg-light, text-dark, etc.) */
+.bg-dark {
+  background-color: #0b0b0d !important;
+  color: #ffffff !important;
+}
+
+.bg-light {
+  background-color: var(--rpprac-soft) !important;
+  color: var(--rpprac-ink) !important;
+}
+
+.text-dark {
+  color: var(--rpprac-ink) !important;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+.bg-body {
+  background-color: #ffffff !important;
+  color: var(--rpprac-ink) !important;
+}
+
+.bg-body-secondary,
+.bg-body-tertiary {
+  background-color: var(--rpprac-soft) !important;
+}
+
+.text-body,
+.text-body-secondary,
+.text-body-tertiary {
+  color: var(--rpprac-ink) !important;
+}
+
 .rpprac-header-top {
   background: #fff;
   border-bottom: 1px solid rgba(11, 11, 13, 0.08);

@@ -1,0 +1,22 @@
+uuid: bb3cde10-663e-42dc-822b-1c0a377048c4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_hero
+    - field.storage.block_content.field_section_text
+  module:
+    - text
+id: block_content.accueil_hero.field_section_text
+field_name: field_section_text
+entity_type: block_content
+bundle: accueil_hero
+label: 'Texte d’accroche'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
