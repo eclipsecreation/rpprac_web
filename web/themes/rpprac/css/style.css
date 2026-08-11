@@ -1,8 +1,8 @@
 body {
   --rpprac-primary: #1b7a3a;
   --rpprac-primary-dark: #125428;
-  --rpprac-accent: #c53a35;
-  --rpprac-accent-dark: #9f2d29;
+  --rpprac-accent: #d32f2f;
+  --rpprac-accent-dark: #9a1818;
   --rpprac-ink: #0b0b0d;
   --rpprac-soft: #edf6f0;
   --rpprac-surface: #ffffff;
@@ -243,7 +243,7 @@ body {
 .rpprac-hero-block::after {
   background:
     linear-gradient(90deg, rgba(7, 7, 7, 0.92) 0%, rgba(7, 7, 7, 0.82) 34%, rgba(27, 122, 58, 0.42) 72%, rgba(27, 122, 58, 0.16) 100%),
-    radial-gradient(circle at top right, rgba(197, 58, 53, 0.22), transparent 38%);
+    radial-gradient(circle at top right, rgba(211, 47, 47, 0.25), transparent 38%);
   content: "";
   inset: 0;
   position: absolute;
@@ -1446,7 +1446,7 @@ body {
 
 .rpprac-footer a:hover,
 .rpprac-footer a:focus {
-  color: #f0625d;
+  color: #ff5252;
 }
 
 .rpprac-back-to-top {
