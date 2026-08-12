@@ -239,6 +239,23 @@ function rpprac_preprocess_html(array &$variables) {
   $variables['b5_body_bg_schema'] = '';
   $variables['b5_theme_mode'] = 'light';
 
+  // Force the theme to use a light colour scheme by setting the
+  // `data-bs-theme` attribute on the root html element. This neutralises
+  // Bootstrap's automatic dark/light switching.
+  if (!isset($variables['attributes']) || !($variables['attributes'] instanceof Attribute)) {
+    $variables['attributes'] = new Attribute();
+  }
+  $variables['attributes']->setAttribute('data-bs-theme', 'light');
+
+  // Set inline CSS variables on the root element to override Bootstrap's
+  // built-in dark/light variables (for example `--bs-dark-rgb`). Placing
+  // these variables inline ensures they take precedence even if the
+  // Bootstrap stylesheet is loaded after the theme stylesheet.
+  $attrs_array = $variables['attributes']->toArray();
+  $existing_style = $attrs_array['style'] ?? '';
+  $override_vars = '--bs-dark-rgb: 5,5,5; --bs-body-bg: #ffffff; --bs-body-color: #0b0b0d; --bs-bg-opacity: 1;';
+  $variables['attributes']->setAttribute('style', trim(($existing_style ? $existing_style . ' ' : '') . $override_vars));
+
   $theme_path = \Drupal::service('extension.list.theme')->getPath('rpprac');
   $base_path = \Drupal::request()->getBasePath();
   $variables['rpprac_favicon_path'] = $base_path . '/' . $theme_path . '/logo.png';
@@ -253,7 +270,17 @@ function rpprac_preprocess_page(array &$variables) {
   $variables['b5_navbar_schema'] = 'light';
   $variables['b5_navbar_bg_schema'] = 'none';
   $variables['b5_footer_schema'] = 'dark';
-  $variables['b5_footer_bg_schema'] = 'dark';
+  // Do not add Bootstrap `bg-*` utilities to the footer so our
+  // `.rpprac-footer` rules control the background. This prevents the
+  // `.bg-dark` utility from superseding theme styles.
+  $variables['b5_footer_bg_schema'] = 'none';
+
+  // Provide an attributes object for the footer so we can inject inline
+  // styles with the highest specificity if Bootstrap utilities still win.
+  if (!isset($variables['footer_attributes']) || !($variables['footer_attributes'] instanceof Attribute)) {
+    $variables['footer_attributes'] = new Attribute();
+  }
+  $variables['footer_attributes']->setAttribute('style', 'background-color: var(--rpprac-footer-bg) !important; color: var(--rpprac-footer-text) !important;');
 
   $variables['rpprac_is_block_demo'] = \Drupal::routeMatch()->getRouteName() === 'block.admin_demo';
   $variables['rpprac_page_has_editorial_hero'] = FALSE;
@@ -385,4 +412,32 @@ function rpprac_preprocess_paragraph(array &$variables) {
 
   $variables['rpprac_embedded_view'] = $embedded_view;
   $variables['rpprac_has_embedded_view'] = TRUE;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for region templates.
+ *
+ * Strip any Bootstrap `bg-*` utility classes from the footer region so
+ * theme styles (`.rpprac-footer`) always control the background.
+ */
+function rpprac_preprocess_region(array &$variables) {
+  if (!isset($variables['region']) || $variables['region'] !== 'footer') {
+    return;
+  }
+
+  if (!isset($variables['attributes']) || !($variables['attributes'] instanceof Attribute)) {
+    return;
+  }
+
+  $attrs_array = $variables['attributes']->toArray();
+  $classes = $attrs_array['class'] ?? [];
+  if (!is_array($classes)) {
+    $classes = preg_split('/\s+/', trim((string) $classes));
+  }
+
+  $filtered = array_values(array_filter($classes, static function ($c) {
+    return strpos($c, 'bg-') !== 0;
+  }));
+
+  $variables['attributes']->setAttribute('class', $filtered);
 }
