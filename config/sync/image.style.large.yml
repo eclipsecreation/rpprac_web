@@ -1,17 +1,23 @@
-uuid: 7b02b0a2-47f5-4668-834a-d206298717e4
+uuid: 19dafee3-c873-4a68-9f54-9c5f9e8b4205
 langcode: fr
 status: true
 dependencies: {  }
 _core:
   default_config_hash: rDR2BOewa2UFH9yG4tVvrGxEVv8U7LQo-RLkJhFpERs
 name: large
-label: Large
+label: 'Large (480×480)'
 effects:
-  c8d3ebda-ba94-4a1b-b94b-15d01ea6c12e:
-    uuid: c8d3ebda-ba94-4a1b-b94b-15d01ea6c12e
-    id: image_scale_and_crop
+  ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d:
+    uuid: ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d
+    id: image_scale
+    weight: 0
+    data:
+      width: 480
+      height: 480
+      upscale: false
+  6e8fe467-84c1-4ef0-a73b-7eccf1cc20e8:
+    uuid: 6e8fe467-84c1-4ef0-a73b-7eccf1cc20e8
+    id: image_convert
     weight: 2
     data:
-      width: 800
-      height: 600
-      anchor: center-center
+      extension: webp

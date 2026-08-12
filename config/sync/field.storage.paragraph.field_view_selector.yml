@@ -3,9 +3,9 @@ langcode: fr
 status: true
 dependencies:
   module:
-    - rpprac_tools
     - options
     - paragraphs
+    - rpprac_tools
 id: paragraph.field_view_selector
 field_name: field_view_selector
 entity_type: paragraph

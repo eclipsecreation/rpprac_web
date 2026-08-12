@@ -1,4 +1,4 @@
-uuid: 89dc24b1-4f5b-43ad-af0f-4bf7e2e1d6be
+uuid: cd1c1ed8-e4cd-411a-8c28-44228b618390
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_chapo
-    - field.field.node.page.field_hero_background_mode
-    - field.field.node.page.field_hero_background_video
     - field.field.node.page.field_hero_image
     - field.field.node.page.field_hero_text
     - field.field.node.page.field_hero_title

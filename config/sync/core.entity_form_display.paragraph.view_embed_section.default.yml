@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.view_embed_section.field_view_id
     - field.field.paragraph.view_embed_section.field_view_selector
     - paragraphs.paragraphs_type.view_embed_section
+  module:
+    - options
 id: paragraph.view_embed_section.default
 targetEntityType: paragraph
 bundle: view_embed_section
