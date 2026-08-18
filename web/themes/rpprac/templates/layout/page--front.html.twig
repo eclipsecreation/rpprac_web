@@ -14,8 +14,7 @@ set nav_classes = 'navbar navbar-expand-lg border-bottom' ~
 {%
 set footer_classes = 'rpprac-footer mt-auto py-4' ~
   (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
-  (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' text-dark ') ~
-  (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' bg-light ')
+  (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' text-dark ')
 %}
 
 <div id="top" class="rpprac-page rpprac-front-page">
