@@ -152,6 +152,15 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
     <footer role="contentinfo" class="{{ footer_classes }}">
       <div class="{{ b5_top_container }}">
         {{ page.footer }}
+        {% if rpprac_social_links %}
+          <div class="rpprac-social-links" aria-label="{{ 'Social links'|t }}">
+            {% for key, url in rpprac_social_links %}
+              <a href="{{ url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ key|capitalize }}">
+                <img src="{{ rpprac_base_path ~ '/' ~ rpprac_theme_path ~ '/icons/' ~ key ~ '.svg' }}" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/{{ key }}';" alt="{{ key|capitalize }}">
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     </footer>
   {% endif %}

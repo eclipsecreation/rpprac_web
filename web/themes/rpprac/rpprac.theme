@@ -69,6 +69,63 @@ function rpprac_form_system_theme_settings_alter(&$form, FormStateInterface $for
   unset($form['body_details']);
   unset($form['nav_details']);
   unset($form['footer_details']);
+
+  // Social links settings.
+  $form['rpprac_social_links'] = [
+    '#type' => 'details',
+    '#title' => t('Social links'),
+    '#open' => FALSE,
+  ];
+
+  $form['rpprac_social_links']['tiktok_url'] = [
+    '#type' => 'url',
+    '#title' => t('TikTok URL'),
+    '#default_value' => theme_get_setting('tiktok_url'),
+    '#description' => t('Full URL to the organisation TikTok profile.'),
+  ];
+
+  $form['rpprac_social_links']['youtube_url'] = [
+    '#type' => 'url',
+    '#title' => t('YouTube URL'),
+    '#default_value' => theme_get_setting('youtube_url'),
+  ];
+
+  $form['rpprac_social_links']['facebook_url'] = [
+    '#type' => 'url',
+    '#title' => t('Facebook URL'),
+    '#default_value' => theme_get_setting('facebook_url'),
+  ];
+
+  $form['rpprac_social_links']['x_url'] = [
+    '#type' => 'url',
+    '#title' => t('X (Twitter) URL'),
+    '#default_value' => theme_get_setting('x_url'),
+  ];
+
+  $form['rpprac_social_links']['instagram_url'] = [
+    '#type' => 'url',
+    '#title' => t('Instagram URL'),
+    '#default_value' => theme_get_setting('instagram_url'),
+  ];
+
+  $form['rpprac_social_links']['snapchat_url'] = [
+    '#type' => 'url',
+    '#title' => t('Snapchat URL'),
+    '#default_value' => theme_get_setting('snapchat_url'),
+  ];
+
+  $form['rpprac_social_links']['rss_url'] = [
+    '#type' => 'url',
+    '#title' => t('RSS feed URL'),
+    '#default_value' => theme_get_setting('rss_url'),
+  ];
+
+  $form['rpprac_social_links']['whatsapp_url'] = [
+    '#type' => 'url',
+    '#title' => t('WhatsApp URL'),
+    '#default_value' => theme_get_setting('whatsapp_url'),
+    '#description' => t('Use the direct chat link (https://wa.me/...) or group invite URL.'),
+  ];
 }
 
 /**
@@ -281,6 +338,27 @@ function rpprac_preprocess_page(array &$variables) {
     $variables['footer_attributes'] = new Attribute();
   }
   $variables['footer_attributes']->setAttribute('style', 'background-color: var(--rpprac-footer-bg) !important; color: var(--rpprac-footer-text) !important;');
+
+  // Attach social links library so styles are available when links are rendered.
+  $variables['#attached']['library'][] = 'rpprac/social-links';
+
+  // Provide social links from theme settings to templates.
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('rpprac');
+  $base_path = \Drupal::request()->getBasePath();
+  $social_keys = ['tiktok', 'youtube', 'facebook', 'instagram', 'snapchat', 'rss', 'whatsapp'];
+  // Add X (Twitter) key.
+  $social_keys[] = 'x';
+  $social_links = [];
+  foreach ($social_keys as $key) {
+    $setting = theme_get_setting($key . '_url');
+    if (!empty($setting)) {
+      $social_links[$key] = $setting;
+    }
+  }
+
+  $variables['rpprac_social_links'] = $social_links;
+  $variables['rpprac_theme_path'] = $theme_path;
+  $variables['rpprac_base_path'] = $base_path;
 
   $variables['rpprac_is_block_demo'] = \Drupal::routeMatch()->getRouteName() === 'block.admin_demo';
   $variables['rpprac_page_has_editorial_hero'] = FALSE;
