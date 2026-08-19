@@ -22,7 +22,5 @@ display:
           exposed_sorts_label: 'Trier par'
           sort_asc_label: Asc
           sort_desc_label: Desc
-  feed_1:
-    display_title: Flux
   page_1:
     display_title: Page

@@ -65,41 +65,7 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          label: ''
-          empty: true
-          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
-          tokenize: false
-        node_listing_empty:
-          id: node_listing_empty
-          table: node
-          field: node_listing_empty
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: node_listing_empty
-          label: ''
-          empty: true
-        title:
-          id: title
-          table: views
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: title
-          label: ''
-          empty: true
-          title: Welcome!
+      empty: {  }
       sorts:
         sticky:
           id: sticky
@@ -257,41 +223,6 @@ display:
       contexts:
         - 'languages:language_interface'
         - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  feed_1:
-    id: feed_1
-    display_title: Flux
-    display_plugin: feed
-    position: 2
-    display_options:
-      pager:
-        type: some
-        options:
-          offset: 0
-          items_per_page: 10
-      style:
-        type: rss
-        options:
-          grouping: {  }
-          uses_fields: false
-          description: ''
-      row:
-        type: node_rss
-        options:
-          relationship: none
-          view_mode: rss
-      display_extenders: {  }
-      path: rss.xml
-      sitename_title: true
-      displays:
-        page_1: page_1
-        default: ''
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
