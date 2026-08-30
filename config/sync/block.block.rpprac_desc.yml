@@ -1,0 +1,25 @@
+uuid: 7df4cf3e-b6b7-4a90-87ea-54921499cbf1
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:accueil_hero:eecfae25-992e-451c-8e9b-74d9552af6cb'
+  module:
+    - block_content
+  theme:
+    - rpprac
+id: rpprac_desc
+theme: rpprac
+region: home_hero
+weight: 0
+provider: null
+plugin: 'block_content:eecfae25-992e-451c-8e9b-74d9552af6cb'
+settings:
+  id: 'block_content:eecfae25-992e-451c-8e9b-74d9552af6cb'
+  label: desc
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

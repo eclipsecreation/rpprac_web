@@ -1,0 +1,8 @@
+uuid: 16d655fc-18af-4756-8ca1-ede882330451
+langcode: fr
+status: true
+dependencies: {  }
+id: accueil_cibles
+label: 'Accueil - Cibles'
+revision: false
+description: "Bloc editorial pour la section cibles de la page d'accueil."

@@ -1,0 +1,10 @@
+uuid: 9ffbde4d-ef53-4d9a-a102-7c3e3a8a6df0
+langcode: fr
+status: true
+dependencies: {  }
+id: view_embed_section
+label: 'Section - Vue'
+icon_uuid: null
+icon_default: null
+description: "Affiche un bloc de vue a l'interieur d'une page."
+behavior_plugins: {  }

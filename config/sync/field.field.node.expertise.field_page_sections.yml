@@ -1,0 +1,23 @@
+uuid: c85fc66f-2ffa-4e9f-b8ca-0ca2fab4af71
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_sections
+    - node.type.expertise
+  module:
+    - entity_reference_revisions
+id: node.expertise.field_page_sections
+field_name: field_page_sections
+entity_type: node
+bundle: expertise
+label: 'Page sections'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings: {  }
+field_type: entity_reference_revisions

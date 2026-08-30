@@ -1,0 +1,27 @@
+uuid: 637c0e96-5cf5-48a9-8bb4-0f6de454836f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_hero_background_mode
+field_name: field_hero_background_mode
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: image
+      label: Image
+    -
+      value: video
+      label: Video
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -10,8 +10,8 @@ _core:
   default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
 id: rpprac_help
 theme: rpprac
-region: header
-weight: 0
+region: content
+weight: -3
 provider: null
 plugin: help_block
 settings:

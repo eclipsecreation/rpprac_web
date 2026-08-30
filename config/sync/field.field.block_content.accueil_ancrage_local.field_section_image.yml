@@ -1,0 +1,33 @@
+uuid: 1760b94a-7859-49fd-830d-fe7995853a78
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_ancrage_local
+    - field.storage.block_content.field_section_image
+  module:
+    - image
+id: block_content.accueil_ancrage_local.field_section_image
+field_name: field_section_image
+entity_type: block_content
+bundle: accueil_ancrage_local
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image: {  }
+field_type: image

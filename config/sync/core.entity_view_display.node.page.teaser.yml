@@ -1,10 +1,19 @@
-uuid: b6e8fec0-0dd7-47be-8174-93df21b84f3f
+uuid: cd1c1ed8-e4cd-411a-8c28-44228b618390
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_chapo
+    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_hero_text
+    - field.field.node.page.field_hero_title
+    - field.field.node.page.field_image
+    - field.field.node.page.field_page_sections
+    - field.field.node.page.field_seo_description
+    - field.field.node.page.field_seo_title
+    - field.field.node.page.field_summary
     - node.type.page
   module:
     - text
@@ -28,4 +37,15 @@ content:
     weight: 101
     region: content
 hidden:
+  field_chapo: true
+  field_hero_background_mode: true
+  field_hero_background_video: true
+  field_hero_image: true
+  field_hero_text: true
+  field_hero_title: true
+  field_image: true
+  field_page_sections: true
+  field_seo_description: true
+  field_seo_title: true
+  field_summary: true
   langcode: true

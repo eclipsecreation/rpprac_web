@@ -1,0 +1,19 @@
+uuid: 3d7abc49-5227-49cc-b9a9-61f14d31bbca
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.accueil_ancrage_local
+    - field.storage.block_content.field_section_title
+id: block_content.accueil_ancrage_local.field_section_title
+field_name: field_section_title
+entity_type: block_content
+bundle: accueil_ancrage_local
+label: 'Titre de section'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

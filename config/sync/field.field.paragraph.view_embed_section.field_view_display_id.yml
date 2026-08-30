@@ -1,0 +1,21 @@
+uuid: 4f4c9814-52c9-4a0f-b6a0-6bc3408f7c48
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_display_id
+    - paragraphs.paragraphs_type.view_embed_section
+id: paragraph.view_embed_section.field_view_display_id
+field_name: field_view_display_id
+entity_type: paragraph
+bundle: view_embed_section
+label: 'Affichage (ID)'
+description: 'Utiliser en general block_1 pour un bloc de vue.'
+required: false
+translatable: true
+default_value:
+  -
+    value: block_1
+default_value_callback: ''
+settings: {  }
+field_type: string

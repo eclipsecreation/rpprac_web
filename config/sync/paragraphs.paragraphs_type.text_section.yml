@@ -1,0 +1,10 @@
+uuid: d81d6f23-5e56-4f5f-8566-3d5f2554bcea
+langcode: fr
+status: true
+dependencies: {  }
+id: text_section
+label: 'Text section'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

@@ -10,8 +10,8 @@ _core:
   default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
 id: rpprac_site_branding
 theme: rpprac
-region: header
-weight: 0
+region: nav_branding
+weight: -7
 provider: null
 plugin: system_branding_block
 settings:

@@ -1,4 +1,4 @@
-uuid: 70f09a4c-34af-43cb-ba51-badfa6dd7487
+uuid: 9c00eb79-f371-48c4-8383-ba63087dc4ec
 langcode: fr
 status: true
 dependencies:
@@ -13,7 +13,7 @@ id: node.article.body
 field_name: body
 entity_type: node
 bundle: article
-label: Body
+label: Corps
 description: ''
 required: false
 translatable: true

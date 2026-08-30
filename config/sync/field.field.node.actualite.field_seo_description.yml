@@ -1,0 +1,22 @@
+uuid: e132d8ef-2758-4bb9-80fd-74bbee7fad4a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo_description
+    - node.type.actualite
+  module:
+    - text
+id: node.actualite.field_seo_description
+field_name: field_seo_description
+entity_type: node
+bundle: actualite
+label: 'SEO description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

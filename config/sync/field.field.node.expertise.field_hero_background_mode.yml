@@ -1,0 +1,23 @@
+uuid: 33333333-3333-4333-8333-333333333333
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_background_mode
+    - node.type.expertise
+  module:
+    - options
+id: node.expertise.field_hero_background_mode
+field_name: field_hero_background_mode
+entity_type: node
+bundle: expertise
+label: 'Type de fond'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: image
+default_value_callback: ''
+settings: {  }
+field_type: list_string

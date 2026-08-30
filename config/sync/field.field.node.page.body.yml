@@ -1,4 +1,4 @@
-uuid: 607148cb-ff4c-41a0-bb69-a3693ad89ed4
+uuid: 3dd88171-89d6-4a87-84db-a16b570addc5
 langcode: fr
 status: true
 dependencies:
@@ -13,7 +13,7 @@ id: node.page.body
 field_name: body
 entity_type: node
 bundle: page
-label: Body
+label: Corps
 description: ''
 required: false
 translatable: true

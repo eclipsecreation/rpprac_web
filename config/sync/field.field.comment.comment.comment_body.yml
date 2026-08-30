@@ -1,4 +1,4 @@
-uuid: 830b78c2-a062-4e5f-b736-ced1ec51cfed
+uuid: c2b25c82-87ab-4831-aa59-1f280ea80da7
 langcode: fr
 status: true
 dependencies:
@@ -13,7 +13,7 @@ id: comment.comment.comment_body
 field_name: comment_body
 entity_type: comment
 bundle: comment
-label: Comment
+label: Commentaire
 description: ''
 required: true
 translatable: true

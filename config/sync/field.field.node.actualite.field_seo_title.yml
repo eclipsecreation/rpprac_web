@@ -1,0 +1,19 @@
+uuid: b2f529ec-1e01-422d-8ce7-596be540be79
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo_title
+    - node.type.actualite
+id: node.actualite.field_seo_title
+field_name: field_seo_title
+entity_type: node
+bundle: actualite
+label: 'SEO title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

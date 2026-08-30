@@ -1,0 +1,23 @@
+uuid: 5cd8a1f0-8d11-4844-98da-c88dc96d7b27
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_sections
+    - node.type.realisation
+  module:
+    - entity_reference_revisions
+id: node.realisation.field_page_sections
+field_name: field_page_sections
+entity_type: node
+bundle: realisation
+label: 'Page sections'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings: {  }
+field_type: entity_reference_revisions

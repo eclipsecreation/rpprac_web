@@ -1,0 +1,36 @@
+uuid: 4dc238c9-94cc-43ce-bd27-ef5133e3f83a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view_embed_section.field_item_title
+    - field.field.paragraph.view_embed_section.field_view_display_id
+    - field.field.paragraph.view_embed_section.field_view_id
+    - field.field.paragraph.view_embed_section.field_view_selector
+    - paragraphs.paragraphs_type.view_embed_section
+  module:
+    - options
+id: paragraph.view_embed_section.default
+targetEntityType: paragraph
+bundle: view_embed_section
+mode: default
+content:
+  field_item_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_view_selector:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_view_display_id: true
+  field_view_id: true
+  status: true

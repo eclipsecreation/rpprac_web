@@ -1,0 +1,8 @@
+uuid: d7e02930-6f22-4dab-ae75-e80e495ce782
+langcode: fr
+status: true
+dependencies: {  }
+id: accueil_positionnement
+label: 'Accueil - Positionnement'
+revision: false
+description: "Bloc editorial pour la section positionnement de la page d'accueil."
