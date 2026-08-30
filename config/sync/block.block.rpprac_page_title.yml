@@ -1,0 +1,20 @@
+uuid: e0cb45d0-8641-4848-85be-23f3455b295d
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - rpprac
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: rpprac_page_title
+theme: rpprac
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

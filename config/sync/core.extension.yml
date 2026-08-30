@@ -41,6 +41,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  rpprac_tools: 0
   search: 0
   shortcut: 0
   system: 0
@@ -55,4 +56,7 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  bootstrap5: 0
+  rpprac: 0
 profile: standard

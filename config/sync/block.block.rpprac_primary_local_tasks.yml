@@ -1,0 +1,22 @@
+uuid: aaaedd57-e690-4be2-a783-9958ca22952f
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - rpprac
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: rpprac_primary_local_tasks
+theme: rpprac
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

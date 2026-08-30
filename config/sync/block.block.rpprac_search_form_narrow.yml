@@ -1,0 +1,23 @@
+uuid: 58225595-c2c2-40c9-a159-3b23232d1c16
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - rpprac
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: rpprac_search_form_narrow
+theme: rpprac
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

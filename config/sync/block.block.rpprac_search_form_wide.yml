@@ -1,0 +1,23 @@
+uuid: 12a23fbe-f99b-4e52-886f-e28c79b25afd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - rpprac
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: rpprac_search_form_wide
+theme: rpprac
+region: header
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }
