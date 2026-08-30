@@ -1,3 +1,0 @@
-stripe_examples.stripe_examples_simple_checkout:
-  title: "Simple checkout form"
-  route_name: stripe_examples.stripe_examples_simple_checkout

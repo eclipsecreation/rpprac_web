@@ -1,8 +1,0 @@
-uuid: 72664a77-af56-450a-97de-985d1249f160
-langcode: fr
-status: true
-dependencies: {  }
-id: accueil_contact_final
-label: 'Accueil - Contact final'
-revision: false
-description: "Bloc editorial pour la section contact final de la page d'accueil."

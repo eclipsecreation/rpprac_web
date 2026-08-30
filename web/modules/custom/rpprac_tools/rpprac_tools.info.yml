@@ -1,8 +1,0 @@
-name: RPPRAC Tools
-type: module
-description: 'Utility callbacks and helpers for RPPRAC editorial tooling.'
-package: Custom
-core_version_requirement: ^10 || ^11
-dependencies:
-  - drupal:options
-  - drupal:views

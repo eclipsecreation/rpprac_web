@@ -1,8 +1,0 @@
-services:
-  stripe_webform_payment.stripe:
-    class: Drupal\stripe_webform_payment\StripteWebformPaymentStripe
-    arguments: ['@config.factory', '@logger.factory', '@messenger']
-
-  stripte_webform_payment.webform:
-    class: Drupal\stripe_webform_payment\StripteWebformPaymentWebform
-    arguments: ['@string_translation', '@stripe_webform_payment.stripe']

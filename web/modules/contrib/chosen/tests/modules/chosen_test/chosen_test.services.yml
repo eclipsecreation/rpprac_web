@@ -1,4 +1,0 @@
-services:
-  Drupal\chosen_test\Hook\ChosenTestHooks:
-    class: Drupal\chosen_test\Hook\ChosenTestHooks
-    autowire: true

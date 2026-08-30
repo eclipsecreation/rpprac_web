@@ -1,8 +1,0 @@
-uuid: 4da85eb7-2eac-4a6d-b9fa-12e2c7a118da
-langcode: fr
-status: true
-dependencies: {  }
-id: accueil_hero
-label: 'Accueil - Hero'
-revision: false
-description: "Bloc editorial pour la section hero de la page d'accueil."

@@ -1,8 +1,0 @@
-uuid: db48917f-d4d3-4b12-8d5b-47039671c89f
-langcode: fr
-status: true
-dependencies: {  }
-id: accueil_methode
-label: 'Accueil - Methode'
-revision: false
-description: "Bloc editorial pour la section methode de la page d'accueil."

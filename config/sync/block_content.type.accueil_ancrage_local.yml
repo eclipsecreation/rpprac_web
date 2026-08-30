@@ -1,8 +1,0 @@
-uuid: a6253f9f-c217-4f7f-8642-e6d3320ec52c
-langcode: fr
-status: true
-dependencies: {  }
-id: accueil_ancrage_local
-label: 'Accueil - Ancrage local'
-revision: false
-description: "Bloc editorial pour la section ancrage local de la page d'accueil."
