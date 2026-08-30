@@ -1,0 +1,9 @@
+name: Date Recur Test Interpreter
+type: module
+description: 'Provides an interpreter plugin for testing.'
+package: Testing
+
+# Information added by Drupal.org packaging script on 2024-11-04
+version: '3.6.1'
+project: 'date_recur'
+datestamp: 1730751120

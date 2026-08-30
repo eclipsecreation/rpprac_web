@@ -1,0 +1,5 @@
+telephone_validation.settings:
+  title: 'Telephone Validation'
+  description: 'Configure default telephone validation settings.'
+  parent: system.admin_config_content
+  route_name: telephone_validation.settings

@@ -1,0 +1,15 @@
+name: Mobile Number
+description: Mobile number field with sms verification.
+package: Field types
+core_version_requirement: ^8.8 || ^9 || ^10
+type: module
+
+dependencies: {  }
+
+test_dependencies:
+ - smsframework:sms
+
+# Information added by Drupal.org packaging script on 2024-01-16
+version: '2.0.2'
+project: 'mobile_number'
+datestamp: 1705431928

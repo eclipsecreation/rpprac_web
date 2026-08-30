@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Installation and uninstallation functions.
+ */
+
+/**
+ * Renames config to remove redundant 'chosen_' prefix.
+ */
+function chosen_update_8001() {
+  $config = \Drupal::configFactory()->getEditable('chosen.settings');
+  $raw_data = $config->getRawData();
+  foreach ($raw_data as $name => $data) {
+    if (strpos($name, 'chosen_') === 0) {
+      unset($raw_data[$name]);
+      $name = str_replace('chosen_', '', $name);
+      $raw_data[$name] = $data;
+    }
+  }
+  $config->setData($raw_data);
+  $config->save();
+}
+
+/**
+ * Set default value for chosen for admin pages and/or front end pages.
+ */
+function chosen_update_8002() {
+  $config = \Drupal::configFactory()->getEditable('chosen.settings');
+  $config->set('chosen_include', CHOSEN_INCLUDE_EVERYWHERE);
+  $config->save();
+}

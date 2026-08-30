@@ -1,0 +1,14 @@
+name: Consumer Image Styles
+type: module
+description: Attach image styles to a given consumer.
+core_version_requirement: ^9.5 || ^10 || ^11
+package: Web services
+dependencies:
+  - drupal:image
+  - consumers:consumers
+  - drupal:jsonapi
+
+# Information added by Drupal.org packaging script on 2024-10-15
+version: '4.0.10'
+project: 'consumer_image_styles'
+datestamp: 1729009526
