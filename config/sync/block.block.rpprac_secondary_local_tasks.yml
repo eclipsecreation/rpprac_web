@@ -9,7 +9,7 @@ _core:
 id: rpprac_secondary_local_tasks
 theme: rpprac
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: local_tasks_block
 settings:
