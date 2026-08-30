@@ -10,7 +10,7 @@ _core:
 id: default
 name: default
 weight: -10
-label: Default
+label: 'Par défaut'
 group: ''
 skin: default
 breakpoints: 0
@@ -34,8 +34,8 @@ options:
     pauseOnFocus: true
     autoplaySpeed: 3000
     arrows: true
-    prevArrow: Previous
-    nextArrow: Next
+    prevArrow: Précédent
+    nextArrow: Suivant
     arrowsPlacement: ''
     downArrow: false
     downArrowTarget: ''

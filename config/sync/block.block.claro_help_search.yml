@@ -20,7 +20,7 @@ provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: 'Search help'
+  label: "Rechercher dans l'aide"
   label_display: visible
   provider: search
   page_id: help_search

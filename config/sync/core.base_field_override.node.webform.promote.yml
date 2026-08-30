@@ -10,7 +10,7 @@ id: node.webform.promote
 field_name: promote
 entity_type: node
 bundle: webform
-label: 'Promoted to front page'
+label: "Promu en page d'accueil"
 description: ''
 required: false
 translatable: true
@@ -19,6 +19,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: Activé
+  off_label: Désactivé
 field_type: boolean
