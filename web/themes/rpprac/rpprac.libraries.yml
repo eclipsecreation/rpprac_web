@@ -1,0 +1,16 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/rpprac.js: {}
+  dependencies:
+    - bootstrap5/global-styling
+    - bootstrap5/bootstrap5-js-latest
+
+social-links:
+  css:
+    theme:
+      css/social.css: {}
+  dependencies:
+    - rpprac/global-styling
