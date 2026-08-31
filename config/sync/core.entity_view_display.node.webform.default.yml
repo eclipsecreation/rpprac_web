@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.webform.field_chapo
+    - field.field.node.webform.field_image
     - field.field.node.webform.webform
+    - image.style.wide
     - node.type.webform
   module:
+    - image
+    - text
     - user
     - webform
 _core:
@@ -15,6 +20,24 @@ targetEntityType: node
 bundle: webform
 mode: default
 content:
+  field_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: -1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }

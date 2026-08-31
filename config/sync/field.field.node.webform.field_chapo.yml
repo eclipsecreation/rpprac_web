@@ -1,0 +1,22 @@
+uuid: 1da07e04-4216-4979-8bb1-4ee2c25aa724
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapo
+    - node.type.webform
+  module:
+    - text
+id: node.webform.field_chapo
+field_name: field_chapo
+entity_type: node
+bundle: webform
+label: Chapo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

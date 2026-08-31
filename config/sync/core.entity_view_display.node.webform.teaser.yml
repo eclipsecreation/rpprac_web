@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.webform.field_chapo
+    - field.field.node.webform.field_image
     - field.field.node.webform.webform
+    - image.style.medium
     - node.type.webform
   module:
+    - image
     - user
 _core:
   default_config_hash: 1Fm_pxiqdI07PvxM8aiSmpsJf0NwkTgsqrNbO4MuID0
@@ -15,11 +19,23 @@ targetEntityType: node
 bundle: webform
 mode: teaser
 content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_chapo: true
   langcode: true
   webform: true
