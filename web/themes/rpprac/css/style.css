@@ -773,7 +773,8 @@ body {
     max-width: none;
   }
 
-  .rpprac-editorial-page__sections .rpprac-section-item {
+  .rpprac-editorial-page__sections .rpprac-section-item,
+  .rpprac-editorial-page__sections .field--name-field-page-sections > .field__item:nth-child(even) .rpprac-section-item {
     grid-template-columns: 1fr;
   }
 
