@@ -409,7 +409,7 @@ body {
 
 .rpprac-editorial-page__sections .field--name-field-page-sections {
   display: grid;
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  gap: clamp(2.5rem, 4vw, 4.5rem);
 }
 
 .rpprac-editorial-page__sections .field--name-field-page-sections > .field__item {
