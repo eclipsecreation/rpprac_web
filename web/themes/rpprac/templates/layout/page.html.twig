@@ -41,6 +41,13 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
 
             <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
               {{ page.nav_main }}
+              {% if rpprac_header_ctas %}
+                <div class="rpprac-header-ctas">
+                  {% for cta in rpprac_header_ctas %}
+                    <a class="rpprac-header-cta rpprac-header-cta--{{ cta.modifier }}" href="{{ cta.url }}">{{ cta.label }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
               {{ page.nav_additional }}
             </div>
           {% endif %}

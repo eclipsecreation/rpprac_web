@@ -78,53 +78,79 @@ function rpprac_form_system_theme_settings_alter(&$form, FormStateInterface $for
   ];
 
   $form['rpprac_social_links']['tiktok_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('TikTok URL'),
     '#default_value' => theme_get_setting('tiktok_url'),
-    '#description' => t('Full URL to the organisation TikTok profile.'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['youtube_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('YouTube URL'),
     '#default_value' => theme_get_setting('youtube_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['facebook_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('Facebook URL'),
     '#default_value' => theme_get_setting('facebook_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['x_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('X (Twitter) URL'),
     '#default_value' => theme_get_setting('x_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['instagram_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('Instagram URL'),
     '#default_value' => theme_get_setting('instagram_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['snapchat_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('Snapchat URL'),
     '#default_value' => theme_get_setting('snapchat_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['rss_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('RSS feed URL'),
     '#default_value' => theme_get_setting('rss_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 
   $form['rpprac_social_links']['whatsapp_url'] = [
-    '#type' => 'url',
+    '#type' => 'textfield',
     '#title' => t('WhatsApp URL'),
     '#default_value' => theme_get_setting('whatsapp_url'),
-    '#description' => t('Use the direct chat link (https://wa.me/...) or group invite URL.'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
+  ];
+
+  $form['rpprac_header_cta'] = [
+    '#type' => 'details',
+    '#title' => t('Header call to action buttons'),
+    '#open' => FALSE,
+  ];
+
+  $form['rpprac_header_cta']['donate_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Faire un don URL'),
+    '#default_value' => theme_get_setting('donate_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
+  ];
+
+  $form['rpprac_header_cta']['join_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Adhérez URL'),
+    '#default_value' => theme_get_setting('join_url'),
+    '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
 }
 
@@ -359,6 +385,23 @@ function rpprac_preprocess_page(array &$variables) {
   $variables['rpprac_social_links'] = $social_links;
   $variables['rpprac_theme_path'] = $theme_path;
   $variables['rpprac_base_path'] = $base_path;
+
+  $header_ctas = [];
+  if ($donate_url = theme_get_setting('donate_url')) {
+    $header_ctas[] = [
+      'label' => t('Faire un don'),
+      'url' => $donate_url,
+      'modifier' => 'donate',
+    ];
+  }
+  if ($join_url = theme_get_setting('join_url')) {
+    $header_ctas[] = [
+      'label' => t('Adhérez'),
+      'url' => $join_url,
+      'modifier' => 'join',
+    ];
+  }
+  $variables['rpprac_header_ctas'] = $header_ctas;
 
   $variables['rpprac_is_block_demo'] = \Drupal::routeMatch()->getRouteName() === 'block.admin_demo';
   $variables['rpprac_page_has_editorial_hero'] = FALSE;

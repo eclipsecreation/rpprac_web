@@ -117,6 +117,77 @@ body {
   filter: none;
 }
 
+.rpprac-header-ctas {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+
+.rpprac-header-cta {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.1;
+  min-height: 2.9rem;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.rpprac-page a.rpprac-header-cta,
+.rpprac-page a.rpprac-header-cta:hover,
+.rpprac-page a.rpprac-header-cta:focus {
+  color: #fff;
+}
+
+.rpprac-header-cta--donate {
+  background: var(--rpprac-accent);
+  border-color: var(--rpprac-accent);
+  box-shadow: 0 0.8rem 1.8rem rgba(var(--rpprac-accent-rgb), 0.2);
+}
+
+.rpprac-header-cta--join {
+  background: var(--rpprac-primary);
+  border-color: var(--rpprac-primary);
+  box-shadow: 0 0.8rem 1.8rem rgba(var(--rpprac-primary-rgb), 0.2);
+}
+
+.rpprac-header-cta:hover,
+.rpprac-header-cta:focus {
+  transform: translateY(-0.1rem);
+}
+
+.rpprac-header-cta--donate:hover,
+.rpprac-header-cta--donate:focus {
+  background: var(--rpprac-accent-dark);
+  border-color: var(--rpprac-accent-dark);
+}
+
+.rpprac-header-cta--join:hover,
+.rpprac-header-cta--join:focus {
+  background: var(--rpprac-primary-dark);
+  border-color: var(--rpprac-primary-dark);
+}
+
+@media (max-width: 991.98px) {
+  .rpprac-header-ctas {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .rpprac-header-cta {
+    width: 100%;
+  }
+}
+
 .rpprac-page a {
   color: var(--rpprac-primary-dark);
   transition: color 0.2s ease;
