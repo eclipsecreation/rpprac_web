@@ -13,37 +13,43 @@ title: 'Action collective en justice contre la vie chère'
 description: ''
 categories: {  }
 elements: |-
-  nom:
-    '#type': textfield
-    '#title': Nom
-    '#required': true
-  prenoms:
-    '#type': textfield
-    '#title': Prénoms
-    '#required': true
-  adresse:
-    '#type': textfield
-    '#title': Adresse
-    '#required': true
-  complement_adresse:
-    '#type': textfield
-    '#title': 'Complément adresse'
-  telephone:
-    '#type': textfield
-    '#title': Téléphone
-    '#required': true
-  courriel:
-    '#type': email
-    '#title': Courriel
-  justificatif_domicile:
-    '#type': managed_file
-    '#title': 'Justificatif domicile'
-    '#required': true
-  piece_identite:
-    '#type': managed_file
-    '#title': 'Pièce identité'
-    '#multiple': 2
-    '#required': true
+  flexbox:
+    '#type': webform_flexbox
+    nom:
+      '#type': textfield
+      '#title': Nom
+      '#required': true
+    prenoms:
+      '#type': textfield
+      '#title': Prénoms
+      '#required': true
+    telephone:
+      '#type': textfield
+      '#title': Téléphone
+      '#required': true
+  flexbox_01:
+    '#type': webform_flexbox
+    adresse:
+      '#type': textfield
+      '#title': Adresse
+      '#required': true
+    complement_adresse:
+      '#type': textfield
+      '#title': 'Complément adresse'
+    courriel:
+      '#type': email
+      '#title': Courriel
+  flexbox_02:
+    '#type': webform_flexbox
+    justificatif_domicile:
+      '#type': managed_file
+      '#title': 'Justificatif domicile'
+      '#required': true
+    piece_identite:
+      '#type': managed_file
+      '#title': 'Pièce identité'
+      '#multiple': 2
+      '#required': true
 css: ''
 javascript: ''
 settings:
