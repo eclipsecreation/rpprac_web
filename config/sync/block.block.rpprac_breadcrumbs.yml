@@ -1,6 +1,6 @@
 uuid: 9a9812c9-3aca-4a2e-a607-e814d154fa58
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -19,4 +19,8 @@ settings:
   label: Breadcrumbs
   label_display: '0'
   provider: system
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
