@@ -444,6 +444,11 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Toutes nos actions'
+      link_display: custom_url
+      link_url: /nos-actions
       header: {  }
       footer: {  }
       display_extenders: {  }

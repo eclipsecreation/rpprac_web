@@ -21,6 +21,12 @@
     {{ rows }}
   </div>
 
+  {% if more %}
+    <div class="rpprac-section-footer">
+      {{ more }}
+    </div>
+  {% endif %}
+
   {% if footer %}
     <div class="rpprac-section-footer">
       {{ footer }}
