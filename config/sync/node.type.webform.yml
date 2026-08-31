@@ -2,9 +2,17 @@ uuid: 2b916e00-3f53-4d80-84c7-381bd70d4ce4
 langcode: fr
 status: true
 dependencies:
+  module:
+    - menu_ui
   enforced:
     module:
       - webform_node
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - footer
+    parent: 'main:'
 _core:
   default_config_hash: kx0vLl7uYoivaJrFGjNZQpe4dC6fMZ-V-9mN_JWc2CI
 name: Webform
