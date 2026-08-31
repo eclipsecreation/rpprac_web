@@ -1,0 +1,20 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+subtheme_folder: themes/custom
+subtheme_name: 'B5 subtheme'
+subtheme_machine_name: b5subtheme
+tiktok_url: 'https://www.tiktok.com/@r.p.p.r.a.c972'
+youtube_url: 'https://www.youtube.com/@RPPRAC'
+facebook_url: 'https://www.facebook.com/rppracmartinique'
+x_url: ''
+instagram_url: 'https://www.instagram.com/rpprac972'
+snapchat_url: ''
+rss_url: ''
+whatsapp_url: ''
