@@ -128,7 +128,7 @@ body {
 .rpprac-header-cta {
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: 0;
   color: #fff;
   display: inline-flex;
   font-size: 0.95rem;
