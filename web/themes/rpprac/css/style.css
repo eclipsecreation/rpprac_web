@@ -1176,7 +1176,8 @@ body {
     min-height: 0;
   }
 
-  .rpprac-highlight-card--has-media {
+  .rpprac-highlight-card--has-media,
+  .view-accueil-mises-en-avant-home .grid:nth-child(even) .rpprac-highlight-card--has-media {
     grid-template-columns: 1fr;
   }
 
