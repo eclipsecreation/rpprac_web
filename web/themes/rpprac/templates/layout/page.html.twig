@@ -79,12 +79,6 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
         </div>
       </section>
 
-      <section class="rpprac-home-section rpprac-home-section--expertises">
-        <div class="{{ b5_top_container }}">
-          {{ page.home_expertises }}
-        </div>
-      </section>
-
       <section class="rpprac-home-section rpprac-home-section--targets">
         <div class="{{ b5_top_container }}">
           {{ page.home_targets }}
@@ -94,12 +88,6 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
       <section class="rpprac-home-section rpprac-home-section--differentiation">
         <div class="{{ b5_top_container }}">
           {{ page.home_differentiation }}
-        </div>
-      </section>
-
-      <section class="rpprac-home-section rpprac-home-section--realizations">
-        <div class="{{ b5_top_container }}">
-          {{ page.home_realizations }}
         </div>
       </section>
 
@@ -157,7 +145,7 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo" class="{{ footer_classes }}">
+    <footer role="contentinfo" class="{{ footer_classes }}"{{ footer_attributes }}>
       <div class="{{ b5_top_container }}">
         {{ page.footer }}
         {% if rpprac_social_links %}

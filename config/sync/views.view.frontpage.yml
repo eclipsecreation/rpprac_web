@@ -226,41 +226,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  feed_1:
-    id: feed_1
-    display_title: Flux
-    display_plugin: feed
-    position: 2
-    display_options:
-      pager:
-        type: some
-        options:
-          offset: 0
-          items_per_page: 10
-      style:
-        type: rss
-        options:
-          grouping: {  }
-          uses_fields: false
-          description: ''
-      row:
-        type: node_rss
-        options:
-          relationship: none
-          view_mode: rss
-      display_extenders: {  }
-      path: rss.xml
-      sitename_title: true
-      displays:
-        page_1: page_1
-        default: ''
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
   page_1:
     id: page_1
     display_title: Page
