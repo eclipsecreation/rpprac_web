@@ -4,20 +4,26 @@
  * Theme override for a home highlight card.
  */
 #}
-<article class="rpprac-realisation-card">
-  {% if fields.field_hero_image is defined %}
-    <div class="rpprac-realisation-card__media">
+{% set has_image = fields.field_hero_image is defined and fields.field_hero_image.content is not empty %}
+
+<article class="rpprac-realisation-card rpprac-highlight-card{{ has_image ? ' rpprac-highlight-card--has-media' }}">
+  {% if has_image %}
+    <div class="rpprac-realisation-card__media rpprac-highlight-card__media">
       {{ fields.field_hero_image.content }}
     </div>
   {% endif %}
 
-  <div class="rpprac-realisation-card__body">
+  <div class="rpprac-realisation-card__body rpprac-highlight-card__body">
     {% if fields.title is defined %}
       <h3 class="rpprac-realisation-card__title">{{ fields.title.content }}</h3>
     {% endif %}
 
     {% if fields.field_chapo is defined %}
       <div class="rpprac-realisation-card__text">{{ fields.field_chapo.content }}</div>
+    {% endif %}
+
+    {% if fields.view_node is defined and fields.view_node.content is not empty %}
+      <div class="rpprac-highlight-card__action">{{ fields.view_node.content }}</div>
     {% endif %}
   </div>
 </article>
