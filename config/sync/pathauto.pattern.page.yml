@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.page
+    - node.type.webform
   module:
     - node
 id: page
@@ -18,6 +19,7 @@ selection_criteria:
       node: node
     bundles:
       page: page
+      webform: webform
 selection_logic: and
 weight: -5
 relationships: {  }
