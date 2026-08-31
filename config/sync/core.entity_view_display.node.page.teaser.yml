@@ -6,10 +6,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_chapo
+    - field.field.node.page.field_hero_background_mode
+    - field.field.node.page.field_hero_background_video
     - field.field.node.page.field_hero_image
     - field.field.node.page.field_hero_text
     - field.field.node.page.field_hero_title
     - field.field.node.page.field_image
+    - field.field.node.page.field_mise_en_avant
     - field.field.node.page.field_page_sections
     - field.field.node.page.field_seo_description
     - field.field.node.page.field_seo_title
@@ -44,6 +47,7 @@ hidden:
   field_hero_text: true
   field_hero_title: true
   field_image: true
+  field_mise_en_avant: true
   field_page_sections: true
   field_seo_description: true
   field_seo_title: true

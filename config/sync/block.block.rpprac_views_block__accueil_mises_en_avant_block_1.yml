@@ -1,0 +1,24 @@
+uuid: c9cfab07-d471-4056-b531-314b5ca39718
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.accueil_mises_en_avant
+  module:
+    - views
+  theme:
+    - rpprac
+id: rpprac_views_block__accueil_mises_en_avant_block_1
+theme: rpprac
+region: home_highlights
+weight: 0
+provider: null
+plugin: 'views_block:accueil_mises_en_avant-block_1'
+settings:
+  id: 'views_block:accueil_mises_en_avant-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

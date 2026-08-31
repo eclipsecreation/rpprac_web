@@ -1,0 +1,21 @@
+uuid: f5c69464-2178-4a3a-a337-2344a78903b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mise_en_avant
+    - node.type.webform
+id: node.webform.field_mise_en_avant
+field_name: field_mise_en_avant
+entity_type: node
+bundle: webform
+label: 'Mise en avant'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

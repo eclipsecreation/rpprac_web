@@ -26,6 +26,7 @@ regions:
   nav_additional: 'Navigation complementaire'
   breadcrumb: 'Fil d''ariane'
   home_hero: 'Accueil - Hero'
+  home_highlights: 'Accueil - Mise en avant'
   home_positioning: 'Accueil - Positionnement'
   home_expertises: 'Accueil - Expertises'
   home_targets: 'Accueil - Cibles'

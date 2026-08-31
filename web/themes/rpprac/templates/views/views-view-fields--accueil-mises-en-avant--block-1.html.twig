@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a home highlight card.
+ */
+#}
+<article class="rpprac-realisation-card">
+  {% if fields.field_hero_image is defined %}
+    <div class="rpprac-realisation-card__media">
+      {{ fields.field_hero_image.content }}
+    </div>
+  {% endif %}
+
+  <div class="rpprac-realisation-card__body">
+    {% if fields.title is defined %}
+      <h3 class="rpprac-realisation-card__title">{{ fields.title.content }}</h3>
+    {% endif %}
+
+    {% if fields.field_chapo is defined %}
+      <div class="rpprac-realisation-card__text">{{ fields.field_chapo.content }}</div>
+    {% endif %}
+  </div>
+</article>

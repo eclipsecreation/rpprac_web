@@ -66,6 +66,14 @@ set footer_classes = 'rpprac-footer mt-auto py-4' ~
       </section>
     {% endif %}
 
+    {% if page.home_highlights %}
+      <section class="rpprac-home-section rpprac-home-section--highlights">
+        <div class="{{ b5_top_container }}">
+          {{ page.home_highlights }}
+        </div>
+      </section>
+    {% endif %}
+
     {% if rpprac_home_positioning or page.home_positioning %}
       <section class="rpprac-home-section rpprac-home-section--positioning">
         <div class="{{ b5_top_container }}">

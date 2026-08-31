@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.webform.field_chapo
     - field.field.node.webform.field_image
+    - field.field.node.webform.field_mise_en_avant
     - field.field.node.webform.webform
     - image.style.wide
     - node.type.webform
@@ -53,6 +54,16 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_mise_en_avant:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }
