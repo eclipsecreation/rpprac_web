@@ -9,10 +9,26 @@ dependencies:
     - image.style.wide
     - node.type.webform
   module:
+    - ds
     - image
     - text
     - user
     - webform
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_image
+        - field_chapo
+        - links
+        - webform
 _core:
   default_config_hash: MV3Ld22H-M37Il3nrpoZcRHkqDSOiUC6vJL0waeEWik
 id: node.webform.default
@@ -36,19 +52,21 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
-    weight: -1
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
   webform:
     type: webform_entity_reference_entity_view
     label: hidden
-    settings: {  }
+    settings:
+      source_entity: true
+      lazy: false
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
 hidden:
   langcode: true
