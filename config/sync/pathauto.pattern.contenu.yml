@@ -1,0 +1,27 @@
+uuid: cf5096dc-59db-41af-bccb-b7c704340e63
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.actualite
+    - node.type.article
+    - node.type.media
+  module:
+    - node
+id: contenu
+label: Contenu
+type: 'canonical_entities:node'
+pattern: '/[node:content-type]/[node:title]'
+selection_criteria:
+  6a306217-0686-422a-8b05-4d3408a0ff75:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      actualite: actualite
+      article: article
+      media: media
+selection_logic: and
+weight: -5
+relationships: {  }

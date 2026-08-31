@@ -64,6 +64,7 @@ module:
   webform: 0
   webform_node: 0
   webform_ui: 0
+  pathauto: 1
   views: 10
   paragraphs: 11
   standard: 1000
