@@ -13,6 +13,9 @@ title: 'Action collective en justice contre la vie chère'
 description: ''
 categories: {  }
 elements: |-
+  intro:
+    '#type': webform_markup
+    '#markup': '<p>Dans le cadre de notre démarche citoyenne, nous invitons toutes les personnes souhaitant soutenir cette initiative à nous transmettre les éléments suivants :</p><ul><li>Un justificatif de domicile de moins de 3 mois</li><li>Nom et prénom</li><li>Adresse complète</li><li>Numéro de téléphone</li></ul><p>L''ensemble des documents et informations doit être envoyé via ce formulaire en ligne.</p><p>Vous pouvez aussi nous les transmettre par courriel à : <a href="mailto:rppraccontact972@gmail.com">rppraccontact972@gmail.com</a></p>'
   flexbox:
     '#type': webform_flexbox
     nom:
