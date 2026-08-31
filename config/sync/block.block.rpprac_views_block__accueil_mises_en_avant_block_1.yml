@@ -11,13 +11,13 @@ dependencies:
 id: rpprac_views_block__accueil_mises_en_avant_block_1
 theme: rpprac
 region: home_highlights
-weight: 0
+weight: -5
 provider: null
 plugin: 'views_block:accueil_mises_en_avant-block_1'
 settings:
   id: 'views_block:accueil_mises_en_avant-block_1'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none

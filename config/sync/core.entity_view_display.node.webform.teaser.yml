@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.webform.field_chapo
+    - field.field.node.webform.field_hero_image
     - field.field.node.webform.field_image
     - field.field.node.webform.field_mise_en_avant
     - field.field.node.webform.webform
@@ -38,6 +39,7 @@ content:
     region: content
 hidden:
   field_chapo: true
+  field_hero_image: true
   field_mise_en_avant: true
   langcode: true
   webform: true
