@@ -148,7 +148,7 @@ function rpprac_form_system_theme_settings_alter(&$form, FormStateInterface $for
 
   $form['rpprac_header_cta']['join_url'] = [
     '#type' => 'textfield',
-    '#title' => t('Adhérez URL'),
+    '#title' => t('Adhérer URL'),
     '#default_value' => theme_get_setting('join_url'),
     '#description' => t('Use a full URL or an internal path such as /alias or /node/9.'),
   ];
@@ -396,7 +396,7 @@ function rpprac_preprocess_page(array &$variables) {
   }
   if ($join_url = theme_get_setting('join_url')) {
     $header_ctas[] = [
-      'label' => t('Adhérez'),
+      'label' => t('Adhérer'),
       'url' => $join_url,
       'modifier' => 'join',
     ];
